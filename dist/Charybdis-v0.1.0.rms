@@ -5704,10 +5704,10 @@ create_object START_TREE {
     temp_min_distance_group_placement 2
 }
 
-/* Singleton schools and explicit spacing prevent stacked fish tiles. */
+/* One fish per actor-area slot prevents overlap across all schools. */
 create_object SHORE_FISH {
     number_of_objects 1
-    number_of_groups 8
+    number_of_groups 1
     group_placement_radius 1
     set_loose_grouping
     set_gaia_object_only
@@ -5716,12 +5716,126 @@ create_object SHORE_FISH {
     max_distance_to_players 30
     force_placement
     terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 4
+    avoid_all_actor_areas
+    actor_area 2000
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2010
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2020
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2030
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2040
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2050
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2060
+    actor_area_radius 4
+}
+
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2070
+    actor_area_radius 4
 }
 
 create_object HARBOR_FISH {
     number_of_objects 1
-    number_of_groups 10
+    number_of_groups 1
     group_placement_radius 1
     set_loose_grouping
     set_gaia_object_only
@@ -5730,19 +5844,345 @@ create_object HARBOR_FISH {
     max_distance_to_players 36
     force_placement
     terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 5
+    avoid_all_actor_areas
+    actor_area 2080
+    actor_area_radius 4
 }
 
 create_object HARBOR_FISH {
     number_of_objects 1
-    number_of_groups 24
+    number_of_groups 1
     group_placement_radius 1
     set_loose_grouping
     set_gaia_object_only
-    min_distance_to_players 28
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
     force_placement
     terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 5
+    avoid_all_actor_areas
+    actor_area 2090
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2100
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2110
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2120
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2130
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2140
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2150
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2160
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2170
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2180
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2190
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2200
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2210
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2220
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2230
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2240
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2250
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2260
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2270
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2280
+    actor_area_radius 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 32
+    max_distance_to_players 55
+    force_placement
+    terrain_to_place_on SEA_WATER
+    avoid_all_actor_areas
+    actor_area 2290
+    actor_area_radius 4
 }
 
 /* Mirrored coil rewards and the three-relic central eye. */

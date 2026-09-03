@@ -288,7 +288,7 @@ check("per-player start and resource counts", () => {
     ["GOLD", RESOURCE_CONTRACT.homeGold],
     ["STONE", RESOURCE_CONTRACT.homeStone],
     ["SHORE_FISH", RESOURCE_CONTRACT.homeShoreFish],
-    ["HARBOR_FISH", RESOURCE_CONTRACT.homeDeepFish],
+    ["HARBOR_FISH", RESOURCE_CONTRACT.homeDeepFish + RESOURCE_CONTRACT.neutralDeepFish / 2],
     ["START_TREE", RESOURCE_CONTRACT.extraStragglers + 1],
   ]);
   for (const [name, quantity] of expected) {
@@ -317,7 +317,6 @@ check("home placement constraints leave usable space", () => {
 });
 
 check("neutral rewards and relic count", () => {
-  assert.equal(neutralQuantity("HARBOR_FISH"), RESOURCE_CONTRACT.neutralDeepFish);
   assert.equal(neutralQuantity("RELIC"), RESOURCE_CONTRACT.relics);
   assert.equal(neutralQuantity("GOLD"), 22);
   assert.equal(neutralQuantity("STONE"), 12);
@@ -326,11 +325,22 @@ check("neutral rewards and relic count", () => {
 });
 
 check("fish schools are singleton and spaced", () => {
-  for (const fish of objects.filter((block) => ["SHORE_FISH", "HARBOR_FISH"].includes(block.name))) {
+  const fishBlocks = objects.filter((block) => ["SHORE_FISH", "HARBOR_FISH"].includes(block.name));
+  const actorAreas = [];
+  assert.equal(fishBlocks.length,
+    RESOURCE_CONTRACT.homeShoreFish
+      + RESOURCE_CONTRACT.homeDeepFish
+      + RESOURCE_CONTRACT.neutralDeepFish / 2);
+  for (const fish of fishBlocks) {
     assert.equal(numericDirective(fish.body, "number_of_objects"), 1);
-    assert.ok(numericDirective(fish.body, "temp_min_distance_group_placement", 0) >= 4);
+    assert.equal(numericDirective(fish.body, "number_of_groups"), 1);
+    assert.ok(hasDirective(fish.body, "avoid_all_actor_areas"));
+    assert.ok(numericDirective(fish.body, "actor_area_radius", 0) >= 4);
     assert.equal(directive(fish.body, "terrain_to_place_on"), "SEA_WATER");
+    assert.ok(hasDirective(fish.body, "set_place_for_every_player"));
+    actorAreas.push(directive(fish.body, "actor_area"));
   }
+  assert.equal(new Set(actorAreas).size, actorAreas.length);
 });
 
 check("player placement never targets a fixed land ID", () => {

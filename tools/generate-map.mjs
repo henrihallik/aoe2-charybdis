@@ -412,46 +412,40 @@ ${sections.join("\n\n")}`;
 }
 
 function fishObjects() {
-  return `/* Singleton schools and explicit spacing prevent stacked fish tiles. */
-create_object SHORE_FISH {
+  let nextActorArea = 2000;
+  const block = ({ object, min, max }) => {
+    const actorArea = nextActorArea;
+    nextActorArea += 10;
+    return `create_object ${object} {
     number_of_objects 1
-    number_of_groups ${RESOURCE_CONTRACT.homeShoreFish}
+    number_of_groups 1
     group_placement_radius 1
     set_loose_grouping
     set_gaia_object_only
     set_place_for_every_player
-    min_distance_to_players 15
-    max_distance_to_players 30
+    min_distance_to_players ${min}
+    max_distance_to_players ${max}
     force_placement
     terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 4
-}
-
-create_object HARBOR_FISH {
-    number_of_objects 1
-    number_of_groups ${RESOURCE_CONTRACT.homeDeepFish}
-    group_placement_radius 1
-    set_loose_grouping
-    set_gaia_object_only
-    set_place_for_every_player
-    min_distance_to_players 20
-    max_distance_to_players 36
-    force_placement
-    terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 5
-}
-
-create_object HARBOR_FISH {
-    number_of_objects 1
-    number_of_groups ${RESOURCE_CONTRACT.neutralDeepFish}
-    group_placement_radius 1
-    set_loose_grouping
-    set_gaia_object_only
-    min_distance_to_players 28
-    force_placement
-    terrain_to_place_on SEA_WATER
-    temp_min_distance_group_placement 5
+    avoid_all_actor_areas
+    actor_area ${actorArea}
+    actor_area_radius 4
 }`;
+  };
+
+  const blocks = [];
+  for (let index = 0; index < RESOURCE_CONTRACT.homeShoreFish; index += 1) {
+    blocks.push(block({ object: "SHORE_FISH", min: 15, max: 30 }));
+  }
+  for (let index = 0; index < RESOURCE_CONTRACT.homeDeepFish; index += 1) {
+    blocks.push(block({ object: "HARBOR_FISH", min: 20, max: 36 }));
+  }
+  for (let index = 0; index < RESOURCE_CONTRACT.neutralDeepFish / 2; index += 1) {
+    blocks.push(block({ object: "HARBOR_FISH", min: 32, max: 55 }));
+  }
+
+  return `/* One fish per actor-area slot prevents overlap across all schools. */
+${blocks.join("\n\n")}`;
 }
 
 function specificObject({

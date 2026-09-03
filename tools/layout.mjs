@@ -183,6 +183,7 @@ export function mapToMinimap({ x, y }) {
 }
 
 export function assertLayoutInvariants() {
+  assert.equal(RESOURCE_CONTRACT.neutralDeepFish % 2, 0);
   const nodes = nodeLands();
   assert.equal(nodes.length, 6);
 
