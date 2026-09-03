@@ -1,0 +1,5995 @@
+/* Compatibility: Age of Empires II: Definitive Edition */
+/*
+    Charybdis v0.1.0
+
+    A purpose-built 1v1 hybrid on a fixed 120 x 120 canvas.
+    Two stone spirals form complete but winding land routes to the central eye.
+    Navigable water fills every channel, and each player starts with a transport.
+
+    Three mirrored shortcut pairs cross neighboring coils. Two pairs generate as
+    open shallows; the third becomes a mangrove lock. Chopping a narrow route
+    through that lock creates a new passage usable by land units and ships.
+
+    Competitive contract:
+      - exact 180-degree rotational geometry and identical resource rules;
+      - color-to-side assignment swaps independently of the geometry;
+      - 6 villagers, 2 houses, one scout, and one transport per player;
+      - standard unit, building, technology, and resource behavior;
+      - five relics, mirrored neutral resource pads, dockable water, and fish;
+      - no XS, triggers, includes, elevation, or object-attribute effects.
+
+    Intended settings: exactly two players, Tiny map, Standard resources.
+*/
+
+/* Stable Definitive Edition terrain aliases. */
+#const SEA_WATER 1
+#const OPEN_GATE 4
+#const HOME_FOREST 10
+#const PROVISION_GROUND 11
+#const HOME_GROUND 12
+#const TIDE_LOCK 55
+#const ARM_GROUND 24
+#const ARM_DETAIL 25
+#const HOME_SELECTOR 38
+#const HOME_FINISHED 39
+#const SHRINE_GROUND 45
+#const EYE_GROUND 45
+#const SALVAGE_GROUND 70
+
+/* Object aliases. */
+#const START_HERDABLE 594
+#const START_LUREABLE 48
+#const START_HUNTABLE 65
+#const START_TREE 349
+#const HARBOR_FISH 457
+#const START_TRANSPORT 545
+#const CENTER_BONFIRE 304
+
+/* Zones and fixed land identifiers. */
+#const SOUTHWEST_HOME_ZONE 10
+#const NORTHEAST_HOME_ZONE 11
+#const ARM_A_ZONE 21
+#const ARM_B_ZONE 22
+#const OBJECTIVE_ZONE 30
+#const TIDE_GATE_ZONE 40
+#const EYE_ID 500
+#const SALVAGE_A_ID 201
+#const SALVAGE_B_ID 202
+#const PROVISION_A_ID 203
+#const PROVISION_B_ID 204
+#const SHRINE_A_ID 205
+#const SHRINE_B_ID 206
+
+/* Per-player actor areas reserve non-overlapping start resources. */
+#const TC_AREA 1000
+#const VILLAGER_AREA 1010
+#const NEAR_SHEEP_AREA 1020
+#const FAR_SHEEP_AREA 1030
+#const BERRIES_AREA 1100
+#const PRIMARY_GOLD_AREA 1110
+#const SECONDARY_GOLD_AREA 1120
+#const TERTIARY_GOLD_AREA 1130
+#const PRIMARY_STONE_AREA 1140
+#const SECONDARY_STONE_AREA 1150
+#const NEAR_BOAR_AREA 1160
+#const FAR_BOAR_AREA 1170
+#const DEER_AREA 1180
+
+/* Exactly one shortcut pair is forest-locked on each generated map. */
+start_random
+    percent_chance 33 #define OUTER_LOCKED
+    percent_chance 34 #define MIDDLE_LOCKED
+    percent_chance 33 #define INNER_LOCKED
+end_random
+
+/* Player colors do not determine which rotationally symmetric start they use. */
+start_random
+    percent_chance 50 #define PLAYER_ONE_SOUTHWEST
+    percent_chance 50 #define PLAYER_TWO_SOUTHWEST
+end_random
+
+
+<PLAYER_SETUP>
+
+direct_placement
+behavior_version 2
+override_map_size 120
+ai_info_map_type RIVERS 0 0 0
+
+
+<LAND_GENERATION>
+
+base_terrain SEA_WATER
+enable_waves 0
+
+/* Continuous primary routes are authored first. */
+/* Spiral arm A: 126 exact stamps. */
+/* ARM_A_STAMP 1 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 20 20
+    left_border 15
+    right_border 75
+    top_border 15
+    bottom_border 75
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 2 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 22 18
+    left_border 17
+    right_border 73
+    top_border 13
+    bottom_border 77
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 3 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 25 17
+    left_border 20
+    right_border 70
+    top_border 12
+    bottom_border 78
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 4 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 27 15
+    left_border 22
+    right_border 68
+    top_border 10
+    bottom_border 80
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 5 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 14
+    left_border 25
+    right_border 65
+    top_border 9
+    bottom_border 81
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 6 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 33 13
+    left_border 28
+    right_border 62
+    top_border 8
+    bottom_border 82
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 7 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 35 12
+    left_border 30
+    right_border 60
+    top_border 7
+    bottom_border 83
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 8 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 38 11
+    left_border 33
+    right_border 57
+    top_border 6
+    bottom_border 84
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 9 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 11
+    left_border 36
+    right_border 54
+    top_border 6
+    bottom_border 84
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 10 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 44 10
+    left_border 39
+    right_border 51
+    top_border 5
+    bottom_border 85
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 11 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 47 10
+    left_border 42
+    right_border 48
+    top_border 5
+    bottom_border 85
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 12 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 49 10
+    left_border 44
+    right_border 46
+    top_border 5
+    bottom_border 85
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 13 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 52 11
+    left_border 47
+    right_border 43
+    top_border 6
+    bottom_border 84
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 14 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 55 11
+    left_border 50
+    right_border 40
+    top_border 6
+    bottom_border 84
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 15 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 57 12
+    left_border 52
+    right_border 38
+    top_border 7
+    bottom_border 83
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 16 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 13
+    left_border 55
+    right_border 35
+    top_border 8
+    bottom_border 82
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 17 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 63 14
+    left_border 58
+    right_border 32
+    top_border 9
+    bottom_border 81
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 18 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 65 15
+    left_border 60
+    right_border 30
+    top_border 10
+    bottom_border 80
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 19 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 67 16
+    left_border 62
+    right_border 28
+    top_border 11
+    bottom_border 79
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 20 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 69 18
+    left_border 64
+    right_border 26
+    top_border 13
+    bottom_border 77
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 21 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 20
+    left_border 66
+    right_border 24
+    top_border 15
+    bottom_border 75
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 22 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 73 21
+    left_border 68
+    right_border 22
+    top_border 16
+    bottom_border 74
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 23 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 75 23
+    left_border 70
+    right_border 20
+    top_border 18
+    bottom_border 72
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 24 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 77 25
+    left_border 72
+    right_border 18
+    top_border 20
+    bottom_border 70
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 25 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 78 27
+    left_border 73
+    right_border 17
+    top_border 22
+    bottom_border 68
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 26 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 79 30
+    left_border 74
+    right_border 16
+    top_border 25
+    bottom_border 65
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 27 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 81 32
+    left_border 76
+    right_border 14
+    top_border 27
+    bottom_border 63
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 28 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 82 34
+    left_border 77
+    right_border 13
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 29 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 82 36
+    left_border 77
+    right_border 13
+    top_border 31
+    bottom_border 59
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 30 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 83 39
+    left_border 78
+    right_border 12
+    top_border 34
+    bottom_border 56
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 31 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 83 41
+    left_border 78
+    right_border 12
+    top_border 36
+    bottom_border 54
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 32 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 84 44
+    left_border 79
+    right_border 11
+    top_border 39
+    bottom_border 51
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 33 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 84 46
+    left_border 79
+    right_border 11
+    top_border 41
+    bottom_border 49
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 34 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 84 48
+    left_border 79
+    right_border 11
+    top_border 43
+    bottom_border 47
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 35 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 83 51
+    left_border 78
+    right_border 12
+    top_border 46
+    bottom_border 44
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 36 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 83 53
+    left_border 78
+    right_border 12
+    top_border 48
+    bottom_border 42
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 37 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 82 55
+    left_border 77
+    right_border 13
+    top_border 50
+    bottom_border 40
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 38 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 82 58
+    left_border 77
+    right_border 13
+    top_border 53
+    bottom_border 37
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 39 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 81 60
+    left_border 76
+    right_border 14
+    top_border 55
+    bottom_border 35
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 40 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 80 62
+    left_border 75
+    right_border 15
+    top_border 57
+    bottom_border 33
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 41 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 79 64
+    left_border 74
+    right_border 16
+    top_border 59
+    bottom_border 31
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 42 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 78 66
+    left_border 73
+    right_border 17
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 43 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 76 67
+    left_border 71
+    right_border 19
+    top_border 62
+    bottom_border 28
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 44 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 75 69
+    left_border 70
+    right_border 20
+    top_border 64
+    bottom_border 26
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 45 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 73 70
+    left_border 68
+    right_border 22
+    top_border 65
+    bottom_border 25
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 46 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 72
+    left_border 66
+    right_border 24
+    top_border 67
+    bottom_border 23
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 47 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 73
+    left_border 65
+    right_border 25
+    top_border 68
+    bottom_border 22
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 48 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 68 74
+    left_border 63
+    right_border 27
+    top_border 69
+    bottom_border 21
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 49 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 66 75
+    left_border 61
+    right_border 29
+    top_border 70
+    bottom_border 20
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 50 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 64 76
+    left_border 59
+    right_border 31
+    top_border 71
+    bottom_border 19
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 51 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 62 77
+    left_border 57
+    right_border 33
+    top_border 72
+    bottom_border 18
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 52 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 77
+    left_border 55
+    right_border 35
+    top_border 72
+    bottom_border 18
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 53 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 58 78
+    left_border 53
+    right_border 37
+    top_border 73
+    bottom_border 17
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 54 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 56 78
+    left_border 51
+    right_border 39
+    top_border 73
+    bottom_border 17
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 55 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 54 78
+    left_border 49
+    right_border 41
+    top_border 73
+    bottom_border 17
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 56 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 52 78
+    left_border 47
+    right_border 43
+    top_border 73
+    bottom_border 17
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 57 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 50 78
+    left_border 45
+    right_border 45
+    top_border 73
+    bottom_border 17
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 58 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 48 77
+    left_border 43
+    right_border 47
+    top_border 72
+    bottom_border 18
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 59 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 46 77
+    left_border 41
+    right_border 49
+    top_border 72
+    bottom_border 18
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 60 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 45 76
+    left_border 40
+    right_border 50
+    top_border 71
+    bottom_border 19
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 61 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 43 76
+    left_border 38
+    right_border 52
+    top_border 71
+    bottom_border 19
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 62 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 75
+    left_border 36
+    right_border 54
+    top_border 70
+    bottom_border 20
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 63 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 74
+    left_border 35
+    right_border 55
+    top_border 69
+    bottom_border 21
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 64 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 38 73
+    left_border 33
+    right_border 57
+    top_border 68
+    bottom_border 22
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 65 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 37 72
+    left_border 32
+    right_border 58
+    top_border 67
+    bottom_border 23
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 66 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 35 71
+    left_border 30
+    right_border 60
+    top_border 66
+    bottom_border 24
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 67 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 34 69
+    left_border 29
+    right_border 61
+    top_border 64
+    bottom_border 26
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 68 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 33 68
+    left_border 28
+    right_border 62
+    top_border 63
+    bottom_border 27
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 69 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 32 66
+    left_border 27
+    right_border 63
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 70 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 31 65
+    left_border 26
+    right_border 64
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 71 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 63
+    left_border 25
+    right_border 65
+    top_border 58
+    bottom_border 32
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 72 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 62
+    left_border 25
+    right_border 65
+    top_border 57
+    bottom_border 33
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 73 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 60
+    left_border 24
+    right_border 66
+    top_border 55
+    bottom_border 35
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 74 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 59
+    left_border 24
+    right_border 66
+    top_border 54
+    bottom_border 36
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 75 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 57
+    left_border 23
+    right_border 67
+    top_border 52
+    bottom_border 38
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 76 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 56
+    left_border 23
+    right_border 67
+    top_border 51
+    bottom_border 39
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 77 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 54
+    left_border 23
+    right_border 67
+    top_border 49
+    bottom_border 41
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 78 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 52
+    left_border 23
+    right_border 67
+    top_border 47
+    bottom_border 43
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 79 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 51
+    left_border 23
+    right_border 67
+    top_border 46
+    bottom_border 44
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 80 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 28 49
+    left_border 23
+    right_border 67
+    top_border 44
+    bottom_border 46
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 81 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 48
+    left_border 24
+    right_border 66
+    top_border 43
+    bottom_border 47
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 82 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 46
+    left_border 24
+    right_border 66
+    top_border 41
+    bottom_border 49
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 83 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 45
+    left_border 25
+    right_border 65
+    top_border 40
+    bottom_border 50
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 84 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 44
+    left_border 25
+    right_border 65
+    top_border 39
+    bottom_border 51
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 85 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 31 42
+    left_border 26
+    right_border 64
+    top_border 37
+    bottom_border 53
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 86 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 32 41
+    left_border 27
+    right_border 63
+    top_border 36
+    bottom_border 54
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 87 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 33 40
+    left_border 28
+    right_border 62
+    top_border 35
+    bottom_border 55
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 88 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 34 39
+    left_border 29
+    right_border 61
+    top_border 34
+    bottom_border 56
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 89 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 35 38
+    left_border 30
+    right_border 60
+    top_border 33
+    bottom_border 57
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 90 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 36 37
+    left_border 31
+    right_border 59
+    top_border 32
+    bottom_border 58
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 91 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 37 37
+    left_border 32
+    right_border 58
+    top_border 32
+    bottom_border 58
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 92 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 38 36
+    left_border 33
+    right_border 57
+    top_border 31
+    bottom_border 59
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 93 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 39 35
+    left_border 34
+    right_border 56
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 94 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 35
+    left_border 36
+    right_border 54
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 95 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 42 34
+    left_border 37
+    right_border 53
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 96 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 43 34
+    left_border 38
+    right_border 52
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 97 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 44 34
+    left_border 39
+    right_border 51
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 98 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 45 34
+    left_border 40
+    right_border 50
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 99 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 47 34
+    left_border 42
+    right_border 48
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 100 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 48 34
+    left_border 43
+    right_border 47
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 101 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 49 34
+    left_border 44
+    right_border 46
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 102 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 50 34
+    left_border 45
+    right_border 45
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 103 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 51 35
+    left_border 46
+    right_border 44
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 104 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 52 35
+    left_border 47
+    right_border 43
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 105 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 53 35
+    left_border 48
+    right_border 42
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 106 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 54 36
+    left_border 49
+    right_border 41
+    top_border 31
+    bottom_border 59
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 107 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 55 36
+    left_border 50
+    right_border 40
+    top_border 31
+    bottom_border 59
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 108 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 56 37
+    left_border 51
+    right_border 39
+    top_border 32
+    bottom_border 58
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 109 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 57 38
+    left_border 52
+    right_border 38
+    top_border 33
+    bottom_border 57
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 110 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 58 39
+    left_border 53
+    right_border 37
+    top_border 34
+    bottom_border 56
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 111 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 58 40
+    left_border 53
+    right_border 37
+    top_border 35
+    bottom_border 55
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 112 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 41
+    left_border 54
+    right_border 36
+    top_border 36
+    bottom_border 54
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 113 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 42
+    left_border 54
+    right_border 36
+    top_border 37
+    bottom_border 53
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 114 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 42
+    left_border 55
+    right_border 35
+    top_border 37
+    bottom_border 53
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 115 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 43
+    left_border 55
+    right_border 35
+    top_border 38
+    bottom_border 52
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 116 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 44
+    left_border 55
+    right_border 35
+    top_border 39
+    bottom_border 51
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 117 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 45
+    left_border 55
+    right_border 35
+    top_border 40
+    bottom_border 50
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 118 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 46
+    left_border 55
+    right_border 35
+    top_border 41
+    bottom_border 49
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 119 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 61 47
+    left_border 56
+    right_border 34
+    top_border 42
+    bottom_border 48
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 120 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 47
+    left_border 55
+    right_border 35
+    top_border 42
+    bottom_border 48
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 121 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 48
+    left_border 55
+    right_border 35
+    top_border 43
+    bottom_border 47
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 122 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 49
+    left_border 55
+    right_border 35
+    top_border 44
+    bottom_border 46
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 123 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 50
+    left_border 55
+    right_border 35
+    top_border 45
+    bottom_border 45
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 124 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 51
+    left_border 54
+    right_border 36
+    top_border 46
+    bottom_border 44
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 125 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 52
+    left_border 54
+    right_border 36
+    top_border 47
+    bottom_border 43
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* ARM_A_STAMP 126 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 58 53
+    left_border 53
+    right_border 37
+    top_border 48
+    bottom_border 42
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_A_ZONE
+}
+
+/* Spiral arm B: 126 exact stamps. */
+/* ARM_B_STAMP 1 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 80 80
+    left_border 75
+    right_border 15
+    top_border 75
+    bottom_border 15
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 2 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 78 82
+    left_border 73
+    right_border 17
+    top_border 77
+    bottom_border 13
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 3 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 75 83
+    left_border 70
+    right_border 20
+    top_border 78
+    bottom_border 12
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 4 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 73 85
+    left_border 68
+    right_border 22
+    top_border 80
+    bottom_border 10
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 5 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 86
+    left_border 65
+    right_border 25
+    top_border 81
+    bottom_border 9
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 6 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 67 87
+    left_border 62
+    right_border 28
+    top_border 82
+    bottom_border 8
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 7 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 65 88
+    left_border 60
+    right_border 30
+    top_border 83
+    bottom_border 7
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 8 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 62 89
+    left_border 57
+    right_border 33
+    top_border 84
+    bottom_border 6
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 9 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 89
+    left_border 54
+    right_border 36
+    top_border 84
+    bottom_border 6
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 10 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 56 90
+    left_border 51
+    right_border 39
+    top_border 85
+    bottom_border 5
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 11 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 53 90
+    left_border 48
+    right_border 42
+    top_border 85
+    bottom_border 5
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 12 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 51 90
+    left_border 46
+    right_border 44
+    top_border 85
+    bottom_border 5
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 13 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 48 89
+    left_border 43
+    right_border 47
+    top_border 84
+    bottom_border 6
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 14 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 45 89
+    left_border 40
+    right_border 50
+    top_border 84
+    bottom_border 6
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 15 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 43 88
+    left_border 38
+    right_border 52
+    top_border 83
+    bottom_border 7
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 16 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 87
+    left_border 35
+    right_border 55
+    top_border 82
+    bottom_border 8
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 17 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 37 86
+    left_border 32
+    right_border 58
+    top_border 81
+    bottom_border 9
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 18 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 35 85
+    left_border 30
+    right_border 60
+    top_border 80
+    bottom_border 10
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 19 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 33 84
+    left_border 28
+    right_border 62
+    top_border 79
+    bottom_border 11
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 20 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 31 82
+    left_border 26
+    right_border 64
+    top_border 77
+    bottom_border 13
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 21 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 80
+    left_border 24
+    right_border 66
+    top_border 75
+    bottom_border 15
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 22 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 27 79
+    left_border 22
+    right_border 68
+    top_border 74
+    bottom_border 16
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 23 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 25 77
+    left_border 20
+    right_border 70
+    top_border 72
+    bottom_border 18
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 24 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 23 75
+    left_border 18
+    right_border 72
+    top_border 70
+    bottom_border 20
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 25 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 22 73
+    left_border 17
+    right_border 73
+    top_border 68
+    bottom_border 22
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 26 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 21 70
+    left_border 16
+    right_border 74
+    top_border 65
+    bottom_border 25
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 27 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 19 68
+    left_border 14
+    right_border 76
+    top_border 63
+    bottom_border 27
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 28 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 18 66
+    left_border 13
+    right_border 77
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 29 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 18 64
+    left_border 13
+    right_border 77
+    top_border 59
+    bottom_border 31
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 30 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 17 61
+    left_border 12
+    right_border 78
+    top_border 56
+    bottom_border 34
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 31 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 17 59
+    left_border 12
+    right_border 78
+    top_border 54
+    bottom_border 36
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 32 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 16 56
+    left_border 11
+    right_border 79
+    top_border 51
+    bottom_border 39
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 33 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 16 54
+    left_border 11
+    right_border 79
+    top_border 49
+    bottom_border 41
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 34 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 16 52
+    left_border 11
+    right_border 79
+    top_border 47
+    bottom_border 43
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 35 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 17 49
+    left_border 12
+    right_border 78
+    top_border 44
+    bottom_border 46
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 36 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 17 47
+    left_border 12
+    right_border 78
+    top_border 42
+    bottom_border 48
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 37 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 18 45
+    left_border 13
+    right_border 77
+    top_border 40
+    bottom_border 50
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 38 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 18 42
+    left_border 13
+    right_border 77
+    top_border 37
+    bottom_border 53
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 39 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 19 40
+    left_border 14
+    right_border 76
+    top_border 35
+    bottom_border 55
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 40 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 20 38
+    left_border 15
+    right_border 75
+    top_border 33
+    bottom_border 57
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 41 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 21 36
+    left_border 16
+    right_border 74
+    top_border 31
+    bottom_border 59
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 42 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 22 34
+    left_border 17
+    right_border 73
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 43 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 24 33
+    left_border 19
+    right_border 71
+    top_border 28
+    bottom_border 62
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 44 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 25 31
+    left_border 20
+    right_border 70
+    top_border 26
+    bottom_border 64
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 45 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 27 30
+    left_border 22
+    right_border 68
+    top_border 25
+    bottom_border 65
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 46 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 29 28
+    left_border 24
+    right_border 66
+    top_border 23
+    bottom_border 67
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 47 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 30 27
+    left_border 25
+    right_border 65
+    top_border 22
+    bottom_border 68
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 48 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 32 26
+    left_border 27
+    right_border 63
+    top_border 21
+    bottom_border 69
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 49 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 34 25
+    left_border 29
+    right_border 61
+    top_border 20
+    bottom_border 70
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 50 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 36 24
+    left_border 31
+    right_border 59
+    top_border 19
+    bottom_border 71
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 51 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 38 23
+    left_border 33
+    right_border 57
+    top_border 18
+    bottom_border 72
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 52 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 23
+    left_border 35
+    right_border 55
+    top_border 18
+    bottom_border 72
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 53 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 42 22
+    left_border 37
+    right_border 53
+    top_border 17
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 54 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 44 22
+    left_border 39
+    right_border 51
+    top_border 17
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 55 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 46 22
+    left_border 41
+    right_border 49
+    top_border 17
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 56 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 48 22
+    left_border 43
+    right_border 47
+    top_border 17
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 57 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 50 22
+    left_border 45
+    right_border 45
+    top_border 17
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 58 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 52 23
+    left_border 47
+    right_border 43
+    top_border 18
+    bottom_border 72
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 59 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 54 23
+    left_border 49
+    right_border 41
+    top_border 18
+    bottom_border 72
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 60 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 55 24
+    left_border 50
+    right_border 40
+    top_border 19
+    bottom_border 71
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 61 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 57 24
+    left_border 52
+    right_border 38
+    top_border 19
+    bottom_border 71
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 62 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 25
+    left_border 54
+    right_border 36
+    top_border 20
+    bottom_border 70
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 63 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 60 26
+    left_border 55
+    right_border 35
+    top_border 21
+    bottom_border 69
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 64 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 62 27
+    left_border 57
+    right_border 33
+    top_border 22
+    bottom_border 68
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 65 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 63 28
+    left_border 58
+    right_border 32
+    top_border 23
+    bottom_border 67
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 66 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 65 29
+    left_border 60
+    right_border 30
+    top_border 24
+    bottom_border 66
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 67 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 66 31
+    left_border 61
+    right_border 29
+    top_border 26
+    bottom_border 64
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 68 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 67 32
+    left_border 62
+    right_border 28
+    top_border 27
+    bottom_border 63
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 69 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 68 34
+    left_border 63
+    right_border 27
+    top_border 29
+    bottom_border 61
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 70 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 69 35
+    left_border 64
+    right_border 26
+    top_border 30
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 71 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 37
+    left_border 65
+    right_border 25
+    top_border 32
+    bottom_border 58
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 72 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 38
+    left_border 65
+    right_border 25
+    top_border 33
+    bottom_border 57
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 73 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 40
+    left_border 66
+    right_border 24
+    top_border 35
+    bottom_border 55
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 74 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 41
+    left_border 66
+    right_border 24
+    top_border 36
+    bottom_border 54
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 75 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 43
+    left_border 67
+    right_border 23
+    top_border 38
+    bottom_border 52
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 76 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 44
+    left_border 67
+    right_border 23
+    top_border 39
+    bottom_border 51
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 77 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 46
+    left_border 67
+    right_border 23
+    top_border 41
+    bottom_border 49
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 78 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 48
+    left_border 67
+    right_border 23
+    top_border 43
+    bottom_border 47
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 79 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 49
+    left_border 67
+    right_border 23
+    top_border 44
+    bottom_border 46
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 80 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 72 51
+    left_border 67
+    right_border 23
+    top_border 46
+    bottom_border 44
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 81 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 52
+    left_border 66
+    right_border 24
+    top_border 47
+    bottom_border 43
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 82 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 71 54
+    left_border 66
+    right_border 24
+    top_border 49
+    bottom_border 41
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 83 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 55
+    left_border 65
+    right_border 25
+    top_border 50
+    bottom_border 40
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 84 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 70 56
+    left_border 65
+    right_border 25
+    top_border 51
+    bottom_border 39
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 85 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 69 58
+    left_border 64
+    right_border 26
+    top_border 53
+    bottom_border 37
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 86 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 68 59
+    left_border 63
+    right_border 27
+    top_border 54
+    bottom_border 36
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 87 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 67 60
+    left_border 62
+    right_border 28
+    top_border 55
+    bottom_border 35
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 88 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 66 61
+    left_border 61
+    right_border 29
+    top_border 56
+    bottom_border 34
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 89 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 65 62
+    left_border 60
+    right_border 30
+    top_border 57
+    bottom_border 33
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 90 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 64 63
+    left_border 59
+    right_border 31
+    top_border 58
+    bottom_border 32
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 91 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 63 63
+    left_border 58
+    right_border 32
+    top_border 58
+    bottom_border 32
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 92 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 62 64
+    left_border 57
+    right_border 33
+    top_border 59
+    bottom_border 31
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 93 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 61 65
+    left_border 56
+    right_border 34
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 94 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 59 65
+    left_border 54
+    right_border 36
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 95 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 58 66
+    left_border 53
+    right_border 37
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 96 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 57 66
+    left_border 52
+    right_border 38
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 97 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 56 66
+    left_border 51
+    right_border 39
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 98 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 55 66
+    left_border 50
+    right_border 40
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 99 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 53 66
+    left_border 48
+    right_border 42
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 100 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 52 66
+    left_border 47
+    right_border 43
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 101 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 51 66
+    left_border 46
+    right_border 44
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 102 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 50 66
+    left_border 45
+    right_border 45
+    top_border 61
+    bottom_border 29
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 103 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 49 65
+    left_border 44
+    right_border 46
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 104 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 48 65
+    left_border 43
+    right_border 47
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 105 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 47 65
+    left_border 42
+    right_border 48
+    top_border 60
+    bottom_border 30
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 106 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 46 64
+    left_border 41
+    right_border 49
+    top_border 59
+    bottom_border 31
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 107 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 45 64
+    left_border 40
+    right_border 50
+    top_border 59
+    bottom_border 31
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 108 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 44 63
+    left_border 39
+    right_border 51
+    top_border 58
+    bottom_border 32
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 109 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 43 62
+    left_border 38
+    right_border 52
+    top_border 57
+    bottom_border 33
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 110 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 42 61
+    left_border 37
+    right_border 53
+    top_border 56
+    bottom_border 34
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 111 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 42 60
+    left_border 37
+    right_border 53
+    top_border 55
+    bottom_border 35
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 112 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 59
+    left_border 36
+    right_border 54
+    top_border 54
+    bottom_border 36
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 113 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 58
+    left_border 36
+    right_border 54
+    top_border 53
+    bottom_border 37
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 114 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 58
+    left_border 35
+    right_border 55
+    top_border 53
+    bottom_border 37
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 115 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 57
+    left_border 35
+    right_border 55
+    top_border 52
+    bottom_border 38
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 116 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 56
+    left_border 35
+    right_border 55
+    top_border 51
+    bottom_border 39
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 117 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 55
+    left_border 35
+    right_border 55
+    top_border 50
+    bottom_border 40
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 118 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 54
+    left_border 35
+    right_border 55
+    top_border 49
+    bottom_border 41
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 119 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 39 53
+    left_border 34
+    right_border 56
+    top_border 48
+    bottom_border 42
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 120 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 53
+    left_border 35
+    right_border 55
+    top_border 48
+    bottom_border 42
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 121 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 52
+    left_border 35
+    right_border 55
+    top_border 47
+    bottom_border 43
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 122 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 51
+    left_border 35
+    right_border 55
+    top_border 46
+    bottom_border 44
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 123 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 40 50
+    left_border 35
+    right_border 55
+    top_border 45
+    bottom_border 45
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 124 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 49
+    left_border 36
+    right_border 54
+    top_border 44
+    bottom_border 46
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 125 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 41 48
+    left_border 36
+    right_border 54
+    top_border 43
+    bottom_border 47
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* ARM_B_STAMP 126 */
+create_land {
+    terrain_type ARM_GROUND
+    number_of_tiles 0
+    base_size 7
+    land_position 42 47
+    left_border 37
+    right_border 53
+    top_border 42
+    bottom_border 48
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone ARM_B_ZONE
+}
+
+/* Large ID-free starts preserve set_place_for_every_player behavior in DE. */
+create_land {
+    terrain_type HOME_GROUND
+    number_of_tiles 820
+    base_size 15
+    land_position 14 14
+    left_border 1
+    right_border 73
+    top_border 1
+    bottom_border 73
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone SOUTHWEST_HOME_ZONE
+    set_circular_base
+    if PLAYER_ONE_SOUTHWEST
+        assign_to_player 1
+    else
+        assign_to_player 2
+    endif
+}
+
+create_land {
+    terrain_type HOME_GROUND
+    number_of_tiles 820
+    base_size 15
+    land_position 86 86
+    left_border 73
+    right_border 1
+    top_border 73
+    bottom_border 1
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone NORTHEAST_HOME_ZONE
+    set_circular_base
+    if PLAYER_ONE_SOUTHWEST
+        assign_to_player 2
+    else
+        assign_to_player 1
+    endif
+}
+
+/* Six paired objective pads and one central eye overwrite the route texture. */
+create_land {
+    terrain_type SALVAGE_GROUND
+    number_of_tiles 90
+    base_size 6
+    land_position 83 40
+    left_border 77
+    right_border 11
+    top_border 34
+    bottom_border 54
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id SALVAGE_A_ID
+}
+
+create_land {
+    terrain_type SALVAGE_GROUND
+    number_of_tiles 90
+    base_size 6
+    land_position 17 60
+    left_border 11
+    right_border 77
+    top_border 54
+    bottom_border 34
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id SALVAGE_B_ID
+}
+
+create_land {
+    terrain_type PROVISION_GROUND
+    number_of_tiles 90
+    base_size 6
+    land_position 34 69
+    left_border 28
+    right_border 60
+    top_border 63
+    bottom_border 25
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id PROVISION_A_ID
+}
+
+create_land {
+    terrain_type PROVISION_GROUND
+    number_of_tiles 90
+    base_size 6
+    land_position 66 31
+    left_border 60
+    right_border 28
+    top_border 25
+    bottom_border 63
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id PROVISION_B_ID
+}
+
+create_land {
+    terrain_type SHRINE_GROUND
+    number_of_tiles 64
+    base_size 5
+    land_position 50 34
+    left_border 44
+    right_border 44
+    top_border 28
+    bottom_border 60
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id SHRINE_A_ID
+}
+
+create_land {
+    terrain_type SHRINE_GROUND
+    number_of_tiles 64
+    base_size 5
+    land_position 50 66
+    left_border 44
+    right_border 44
+    top_border 60
+    bottom_border 28
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id SHRINE_B_ID
+}
+
+create_land {
+    terrain_type EYE_GROUND
+    number_of_tiles 220
+    base_size 9
+    land_position 50 50
+    left_border 42
+    right_border 42
+    top_border 42
+    bottom_border 42
+    border_fuzziness 100
+    clumping_factor 100
+    other_zone_avoidance_distance 0
+    zone OBJECTIVE_ZONE
+    land_id EYE_ID
+}
+
+/* Seed-dependent cross-coil shortcuts are the final geometry layer. */
+/* OUTER: one rotationally mirrored shortcut pair. */
+if OUTER_LOCKED
+    /* GATE_OUTER_A_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 48 80
+        left_border 45
+        right_border 49
+        top_border 77
+        bottom_border 17
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 48 82
+        left_border 45
+        right_border 49
+        top_border 79
+        bottom_border 15
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 48 84
+        left_border 45
+        right_border 49
+        top_border 81
+        bottom_border 13
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 47 85
+        left_border 44
+        right_border 50
+        top_border 82
+        bottom_border 12
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 47 86
+        left_border 44
+        right_border 50
+        top_border 83
+        bottom_border 11
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 52 20
+        left_border 49
+        right_border 45
+        top_border 17
+        bottom_border 77
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 52 18
+        left_border 49
+        right_border 45
+        top_border 15
+        bottom_border 79
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 52 16
+        left_border 49
+        right_border 45
+        top_border 13
+        bottom_border 81
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 53 15
+        left_border 50
+        right_border 44
+        top_border 12
+        bottom_border 82
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 53 14
+        left_border 50
+        right_border 44
+        top_border 11
+        bottom_border 83
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+else
+    /* GATE_OUTER_A_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 48 80
+        left_border 45
+        right_border 49
+        top_border 77
+        bottom_border 17
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 48 82
+        left_border 45
+        right_border 49
+        top_border 79
+        bottom_border 15
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 48 84
+        left_border 45
+        right_border 49
+        top_border 81
+        bottom_border 13
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 47 85
+        left_border 44
+        right_border 50
+        top_border 82
+        bottom_border 12
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_A_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 47 86
+        left_border 44
+        right_border 50
+        top_border 83
+        bottom_border 11
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 52 20
+        left_border 49
+        right_border 45
+        top_border 17
+        bottom_border 77
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 52 18
+        left_border 49
+        right_border 45
+        top_border 15
+        bottom_border 79
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 52 16
+        left_border 49
+        right_border 45
+        top_border 13
+        bottom_border 81
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 53 15
+        left_border 50
+        right_border 44
+        top_border 12
+        bottom_border 82
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_OUTER_B_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 53 14
+        left_border 50
+        right_border 44
+        top_border 11
+        bottom_border 83
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+endif
+
+/* MIDDLE: one rotationally mirrored shortcut pair. */
+if MIDDLE_LOCKED
+    /* GATE_MIDDLE_A_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 25 50
+        left_border 22
+        right_border 72
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 24 50
+        left_border 21
+        right_border 73
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 22 50
+        left_border 19
+        right_border 75
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 20 50
+        left_border 17
+        right_border 77
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 19 50
+        left_border 16
+        right_border 78
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 75 50
+        left_border 72
+        right_border 22
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 76 50
+        left_border 73
+        right_border 21
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 78 50
+        left_border 75
+        right_border 19
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 80 50
+        left_border 77
+        right_border 17
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 81 50
+        left_border 78
+        right_border 16
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+else
+    /* GATE_MIDDLE_A_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 25 50
+        left_border 22
+        right_border 72
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 24 50
+        left_border 21
+        right_border 73
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 22 50
+        left_border 19
+        right_border 75
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 20 50
+        left_border 17
+        right_border 77
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_A_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 19 50
+        left_border 16
+        right_border 78
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 75 50
+        left_border 72
+        right_border 22
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 76 50
+        left_border 73
+        right_border 21
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 78 50
+        left_border 75
+        right_border 19
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 80 50
+        left_border 77
+        right_border 17
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_MIDDLE_B_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 81 50
+        left_border 78
+        right_border 16
+        top_border 47
+        bottom_border 47
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+endif
+
+/* INNER: one rotationally mirrored shortcut pair. */
+if INNER_LOCKED
+    /* GATE_INNER_A_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 63 44
+        left_border 60
+        right_border 34
+        top_border 41
+        bottom_border 53
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 65 43
+        left_border 62
+        right_border 32
+        top_border 40
+        bottom_border 54
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 66 42
+        left_border 63
+        right_border 31
+        top_border 39
+        bottom_border 55
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 68 42
+        left_border 65
+        right_border 29
+        top_border 39
+        bottom_border 55
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 69 41
+        left_border 66
+        right_border 28
+        top_border 38
+        bottom_border 56
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_1 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 37 56
+        left_border 34
+        right_border 60
+        top_border 53
+        bottom_border 41
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_2 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 35 57
+        left_border 32
+        right_border 62
+        top_border 54
+        bottom_border 40
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_3 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 34 58
+        left_border 31
+        right_border 63
+        top_border 55
+        bottom_border 39
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_4 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 32 58
+        left_border 29
+        right_border 65
+        top_border 55
+        bottom_border 39
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_5 */
+    create_land {
+        terrain_type TIDE_LOCK
+        number_of_tiles 0
+        base_size 3
+        land_position 31 59
+        left_border 28
+        right_border 66
+        top_border 56
+        bottom_border 38
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+else
+    /* GATE_INNER_A_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 63 44
+        left_border 60
+        right_border 34
+        top_border 41
+        bottom_border 53
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 65 43
+        left_border 62
+        right_border 32
+        top_border 40
+        bottom_border 54
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 66 42
+        left_border 63
+        right_border 31
+        top_border 39
+        bottom_border 55
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 68 42
+        left_border 65
+        right_border 29
+        top_border 39
+        bottom_border 55
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_A_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 69 41
+        left_border 66
+        right_border 28
+        top_border 38
+        bottom_border 56
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_1 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 37 56
+        left_border 34
+        right_border 60
+        top_border 53
+        bottom_border 41
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_2 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 35 57
+        left_border 32
+        right_border 62
+        top_border 54
+        bottom_border 40
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_3 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 34 58
+        left_border 31
+        right_border 63
+        top_border 55
+        bottom_border 39
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_4 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 32 58
+        left_border 29
+        right_border 65
+        top_border 55
+        bottom_border 39
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+
+    /* GATE_INNER_B_5 */
+    create_land {
+        terrain_type OPEN_GATE
+        number_of_tiles 0
+        base_size 3
+        land_position 31 59
+        left_border 28
+        right_border 66
+        top_border 56
+        bottom_border 38
+        border_fuzziness 100
+        clumping_factor 100
+        other_zone_avoidance_distance 0
+        zone TIDE_GATE_ZONE
+    }
+endif
+
+
+<ELEVATION_GENERATION>
+
+/* Intentionally flat: elevation is unnecessary for the route mechanic. */
+
+
+<TERRAIN_GENERATION>
+
+/* Broken paving adds close-camera detail without changing pathing. */
+create_terrain ARM_DETAIL {
+    base_terrain ARM_GROUND
+    land_percent 18
+    number_of_clumps 36
+    clumping_factor 8
+    spacing_to_other_terrain_types 1
+    terrain_mask 1
+}
+
+/* Each disconnected home receives the same three-clump forest budget. */
+/* Home forest slot 1. */
+create_terrain HOME_SELECTOR {
+    base_terrain HOME_GROUND
+    land_percent 100
+    number_of_clumps 1
+}
+create_terrain HOME_FOREST {
+    base_terrain HOME_SELECTOR
+    number_of_tiles 135
+    number_of_clumps 3
+    clumping_factor 24
+    spacing_to_other_terrain_types 1
+    set_avoid_player_start_areas 12
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+
+/* Home forest slot 2. */
+create_terrain HOME_SELECTOR {
+    base_terrain HOME_GROUND
+    land_percent 100
+    number_of_clumps 1
+}
+create_terrain HOME_FOREST {
+    base_terrain HOME_SELECTOR
+    number_of_tiles 135
+    number_of_clumps 3
+    clumping_factor 24
+    spacing_to_other_terrain_types 1
+    set_avoid_player_start_areas 12
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_FINISHED {
+    base_terrain HOME_SELECTOR
+    land_percent 100
+    number_of_clumps 9320
+}
+
+/* Restore temporary carpet terrain to normal buildable home ground. */
+create_terrain HOME_GROUND {
+    base_terrain HOME_FINISHED
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_GROUND {
+    base_terrain HOME_FINISHED
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_GROUND {
+    base_terrain HOME_FINISHED
+    land_percent 100
+    number_of_clumps 9320
+}
+create_terrain HOME_GROUND {
+    base_terrain HOME_FINISHED
+    land_percent 100
+    number_of_clumps 9320
+}
+
+
+<CONNECTION_GENERATION>
+
+/* All intended land connections are explicit authored geometry. */
+
+
+<OBJECTS_GENERATION>
+
+/* Civilizations keep their normal economic bonuses and starting stockpiles. */
+create_object TOWN_CENTER {
+    set_place_for_every_player
+    min_distance_to_players 0
+    max_distance_to_players 0
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    actor_area TC_AREA
+    actor_area_radius 8
+}
+
+create_object START_TREE {
+    number_of_objects 1
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 5
+    max_distance_to_players 6
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    actor_area VILLAGER_AREA
+    actor_area_radius 5
+}
+
+create_object VILLAGER {
+    number_of_objects 6
+    set_place_for_every_player
+    actor_area_to_place_in VILLAGER_AREA
+    force_placement
+}
+
+create_object HOUSE {
+    number_of_objects 2
+    set_place_for_every_player
+    min_distance_to_players 6
+    max_distance_to_players 10
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    temp_min_distance_group_placement 3
+}
+
+create_object SCOUT {
+    number_of_objects 1
+    set_place_for_every_player
+    min_distance_to_players 5
+    max_distance_to_players 9
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+}
+
+if REGICIDE
+    create_object KING {
+        set_place_for_every_player
+        min_distance_to_players 4
+        max_distance_to_players 7
+        find_closest
+        force_placement
+        terrain_to_place_on HOME_GROUND
+    }
+endif
+
+create_object START_TRANSPORT {
+    number_of_objects 1
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 28
+    find_closest
+    force_placement
+    terrain_to_place_on SEA_WATER
+}
+
+/* Exact per-player food and mine counts; actor areas keep deposits separate. */
+create_object START_HERDABLE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 3
+    max_distance_to_players 7
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+
+
+    actor_area NEAR_SHEEP_AREA
+    actor_area_radius 4
+}
+
+create_object START_HERDABLE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 3
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 7
+    max_distance_to_players 11
+    force_placement
+    terrain_to_place_on HOME_GROUND
+
+    avoid_actor_area NEAR_SHEEP_AREA
+    actor_area FAR_SHEEP_AREA
+    actor_area_radius 4
+    temp_min_distance_group_placement 4
+}
+
+create_object FORAGE {
+    number_of_objects 6
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 7
+    max_distance_to_players 12
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 1
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    actor_area BERRIES_AREA
+    actor_area_radius 4
+}
+
+create_object START_LUREABLE {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 10
+    max_distance_to_players 14
+    force_placement
+    terrain_to_place_on HOME_GROUND
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    actor_area NEAR_BOAR_AREA
+    actor_area_radius 3
+}
+
+create_object START_LUREABLE {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 1
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 12
+    max_distance_to_players 16
+    force_placement
+    terrain_to_place_on HOME_GROUND
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    avoid_actor_area NEAR_BOAR_AREA
+    actor_area FAR_BOAR_AREA
+    actor_area_radius 3
+    temp_min_distance_group_placement 5
+}
+
+create_object START_HUNTABLE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 3
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 9
+    max_distance_to_players 15
+    force_placement
+    terrain_to_place_on HOME_GROUND
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    actor_area DEER_AREA
+    actor_area_radius 4
+}
+
+create_object GOLD {
+    number_of_objects 7
+    number_of_groups 1
+    group_placement_radius 3
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 7
+    max_distance_to_players 11
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 2
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    actor_area PRIMARY_GOLD_AREA
+    actor_area_radius 4
+}
+
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 10
+    max_distance_to_players 14
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 2
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    avoid_actor_area PRIMARY_GOLD_AREA
+    actor_area SECONDARY_GOLD_AREA
+    actor_area_radius 4
+    temp_min_distance_group_placement 5
+}
+
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 12
+    max_distance_to_players 16
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 2
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    avoid_actor_area PRIMARY_GOLD_AREA
+    avoid_actor_area SECONDARY_GOLD_AREA
+    actor_area TERTIARY_GOLD_AREA
+    actor_area_radius 4
+    temp_min_distance_group_placement 5
+}
+
+create_object STONE {
+    number_of_objects 5
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 9
+    max_distance_to_players 13
+    find_closest
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 2
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    avoid_actor_area PRIMARY_GOLD_AREA
+    avoid_actor_area SECONDARY_GOLD_AREA
+    avoid_actor_area TERTIARY_GOLD_AREA
+    actor_area PRIMARY_STONE_AREA
+    actor_area_radius 4
+}
+
+create_object STONE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 12
+    max_distance_to_players 16
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_forest_zone 2
+
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    avoid_actor_area BERRIES_AREA
+    avoid_actor_area PRIMARY_GOLD_AREA
+    avoid_actor_area SECONDARY_GOLD_AREA
+    avoid_actor_area TERTIARY_GOLD_AREA
+    avoid_actor_area PRIMARY_STONE_AREA
+    actor_area SECONDARY_STONE_AREA
+    actor_area_radius 4
+    temp_min_distance_group_placement 5
+}
+
+create_object START_TREE {
+    number_of_objects 1
+    number_of_groups 6
+    group_placement_radius 1
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 4
+    max_distance_to_players 13
+    force_placement
+    terrain_to_place_on HOME_GROUND
+    avoid_actor_area TC_AREA
+    avoid_actor_area VILLAGER_AREA
+    temp_min_distance_group_placement 2
+}
+
+/* Singleton schools and explicit spacing prevent stacked fish tiles. */
+create_object SHORE_FISH {
+    number_of_objects 1
+    number_of_groups 8
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 15
+    max_distance_to_players 30
+    force_placement
+    terrain_to_place_on SEA_WATER
+    temp_min_distance_group_placement 4
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 10
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    set_place_for_every_player
+    min_distance_to_players 20
+    max_distance_to_players 36
+    force_placement
+    terrain_to_place_on SEA_WATER
+    temp_min_distance_group_placement 5
+}
+
+create_object HARBOR_FISH {
+    number_of_objects 1
+    number_of_groups 24
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    min_distance_to_players 28
+    force_placement
+    terrain_to_place_on SEA_WATER
+    temp_min_distance_group_placement 5
+}
+
+/* Mirrored coil rewards and the three-relic central eye. */
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SALVAGE_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SALVAGE_GROUND
+    actor_area 7010
+    actor_area_radius 3
+}
+
+create_object STONE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SALVAGE_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SALVAGE_GROUND
+    avoid_actor_area 7010
+    actor_area 7011
+    actor_area_radius 3
+}
+
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SALVAGE_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SALVAGE_GROUND
+    actor_area 7020
+    actor_area_radius 3
+}
+
+create_object STONE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SALVAGE_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SALVAGE_GROUND
+    avoid_actor_area 7020
+    actor_area 7021
+    actor_area_radius 3
+}
+
+create_object FORAGE {
+    number_of_objects 6
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id PROVISION_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on PROVISION_GROUND
+    actor_area 7030
+    actor_area_radius 3
+}
+
+create_object START_HUNTABLE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_loose_grouping
+    set_gaia_object_only
+    place_on_specific_land_id PROVISION_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on PROVISION_GROUND
+    avoid_actor_area 7030
+    actor_area 7031
+    actor_area_radius 3
+}
+
+create_object FORAGE {
+    number_of_objects 6
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id PROVISION_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on PROVISION_GROUND
+    actor_area 7040
+    actor_area_radius 3
+}
+
+create_object START_HUNTABLE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_loose_grouping
+    set_gaia_object_only
+    place_on_specific_land_id PROVISION_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on PROVISION_GROUND
+    avoid_actor_area 7040
+    actor_area 7041
+    actor_area_radius 3
+}
+
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SHRINE_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SHRINE_GROUND
+    actor_area 7050
+    actor_area_radius 3
+}
+
+create_object RELIC {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SHRINE_A_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SHRINE_GROUND
+    avoid_actor_area 7050
+    actor_area 7051
+    actor_area_radius 2
+}
+
+create_object GOLD {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SHRINE_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SHRINE_GROUND
+    actor_area 7060
+    actor_area_radius 3
+}
+
+create_object RELIC {
+    number_of_objects 1
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id SHRINE_B_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on SHRINE_GROUND
+    avoid_actor_area 7060
+    actor_area 7061
+    actor_area_radius 2
+}
+
+create_object CENTER_BONFIRE {
+    number_of_objects 1
+    set_gaia_object_only
+    place_on_specific_land_id EYE_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on EYE_GROUND
+    actor_area 9000
+    actor_area_radius 3
+}
+
+create_object GOLD {
+    number_of_objects 6
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id EYE_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on EYE_GROUND
+    avoid_actor_area 9000
+    actor_area 9010
+    actor_area_radius 4
+}
+
+create_object STONE {
+    number_of_objects 4
+    number_of_groups 1
+    group_placement_radius 2
+    set_tight_grouping
+    set_gaia_object_only
+    place_on_specific_land_id EYE_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on EYE_GROUND
+    avoid_actor_area 9000
+    avoid_actor_area 9010
+    actor_area 9020
+    actor_area_radius 3
+}
+
+create_object RELIC {
+    number_of_objects 1
+    number_of_groups 3
+    group_placement_radius 1
+    set_loose_grouping
+    set_gaia_object_only
+    place_on_specific_land_id EYE_ID
+    avoid_other_land_zones 0
+    find_closest
+    force_placement
+    terrain_to_place_on EYE_GROUND
+    avoid_actor_area 9000
+    avoid_actor_area 9010
+    avoid_actor_area 9020
+    temp_min_distance_group_placement 4
+}

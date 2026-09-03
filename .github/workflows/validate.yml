@@ -1,0 +1,20 @@
+name: Validate RMS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check generated files
+        run: node tools/generate-map.mjs --check
+      - name: Validate map contract
+        run: node tools/validate-rms.mjs
+      - name: Build transfer package
+        run: bash tools/package.sh
