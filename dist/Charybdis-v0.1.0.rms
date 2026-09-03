@@ -21,7 +21,7 @@
     Intended settings: exactly two players, Tiny map, Standard resources.
 */
 
-/* Stable Definitive Edition terrain aliases. */
+/* Stable Definitive Edition terrain aliases. Mangrove forest is 55 in DE. */
 #const SEA_WATER 1
 #const OPEN_GATE 4
 #const HOME_FOREST 10

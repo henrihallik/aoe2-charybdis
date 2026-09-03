@@ -131,12 +131,40 @@ check("unique constant names", () => {
 });
 
 check("safe DE feature surface", () => {
+  const aliases = new Map([
+    ["SEA_WATER", 1],
+    ["OPEN_GATE", 4],
+    ["HOME_FOREST", 10],
+    ["PROVISION_GROUND", 11],
+    ["HOME_GROUND", 12],
+    ["TIDE_LOCK", 55],
+    ["ARM_GROUND", 24],
+    ["ARM_DETAIL", 25],
+    ["HOME_SELECTOR", 38],
+    ["HOME_FINISHED", 39],
+    ["SHRINE_GROUND", 45],
+    ["EYE_GROUND", 45],
+    ["SALVAGE_GROUND", 70],
+    ["START_HERDABLE", 594],
+    ["START_LUREABLE", 48],
+    ["START_HUNTABLE", 65],
+    ["START_TREE", 349],
+    ["HARBOR_FISH", 457],
+    ["START_TRANSPORT", 545],
+    ["CENTER_BONFIRE", 304],
+  ]);
+
   assert.match(source, /\bdirect_placement\b/);
   assert.match(source, /\bbehavior_version\s+2\b/);
   assert.match(source, new RegExp(`\\boverride_map_size\\s+${MAP_SIZE}\\b`));
   assert.match(source, /\bai_info_map_type\s+RIVERS\s+0\s+0\s+0\b/);
-  assert.match(source, /^#const\s+TIDE_LOCK\s+55\s*$/m,
-    "Definitive Edition mangrove forest must use terrain ID 55");
+  for (const [name, value] of aliases) {
+    assert.match(
+      source,
+      new RegExp(`^#const\\s+${name}\\s+${value}\\s*$`, "m"),
+      `${name} must retain its verified Definitive Edition ID`,
+    );
+  }
   for (const forbidden of [
     /#include\b/,
     /\beffect_amount\b/,

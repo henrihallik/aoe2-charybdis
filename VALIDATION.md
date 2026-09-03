@@ -9,9 +9,9 @@ node tools/validate-rms.mjs
 ```
 
 Result: 18 checks pass. They cover balanced braces and conditionals, section
-order, the safe DE feature surface, random-branch totals, generated spiral and
-gate coordinates, home separation, objective IDs, forests, object quantities,
-fish spacing, and ASCII hygiene.
+order, pinned DE terrain and object aliases, random-branch totals, generated
+spiral and gate coordinates, home separation, objective IDs, forests, object
+quantities, fish spacing, and ASCII hygiene.
 
 ## aoe2-rms-parser 2.0.1
 

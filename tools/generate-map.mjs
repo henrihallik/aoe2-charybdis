@@ -145,7 +145,7 @@ end_random`;
 
 function constants() {
   const nodeIds = nodeLands().map((node) => `#const ${node.idName} ${node.id}`).join("\n");
-  return `/* Stable Definitive Edition terrain aliases. */
+  return `/* Stable Definitive Edition terrain aliases. Mangrove forest is 55 in DE. */
 #const SEA_WATER 1
 #const OPEN_GATE 4
 #const HOME_FOREST 10
