@@ -16,7 +16,7 @@ export const START_RADIUS = Math.hypot(30, 30);
 export const END_RADIUS = 8.5;
 export const END_THETA = 9;
 export const RADIAL_FALLOFF = (START_RADIUS - END_RADIUS) / END_THETA;
-export const ARM_STAMP_SIZE = 7;
+export const ARM_STAMP_SIZE = 3;
 export const ARM_SAMPLE_STEP = 0.07;
 
 export const TIDE_STATES = Object.freeze([
@@ -203,8 +203,10 @@ export function assertLayoutInvariants() {
     assert.ok(distance(samples[0], HOME_CENTERS[arm]) < 9);
     assert.ok(distance(samples.at(-1), CENTER) <= END_RADIUS + 1);
     for (let index = 1; index < samples.length; index += 1) {
+      const dx = Math.abs(samples[index - 1].x - samples[index].x);
+      const dy = Math.abs(samples[index - 1].y - samples[index].y);
       assert.ok(
-        distance(samples[index - 1], samples[index]) <= ARM_STAMP_SIZE,
+        Math.max(dx, dy) <= ARM_STAMP_SIZE,
         `arm ${arm} is discontinuous at sample ${index}`,
       );
     }
@@ -217,6 +219,18 @@ export function assertLayoutInvariants() {
     armA.map(rotate180),
     "spiral arms lost exact 180-degree symmetry",
   );
+  for (const first of armA) {
+    for (const second of armB) {
+      const centerDistance = Math.max(
+        Math.abs(first.x - second.x),
+        Math.abs(first.y - second.y),
+      );
+      assert.ok(
+        centerDistance >= 2 * ARM_STAMP_SIZE + 2,
+        "spiral-arm stamps overlap or close the water channel",
+      );
+    }
+  }
 
   for (const gate of allGatePairs()) {
     assert.equal(gate.lines.length, 2);

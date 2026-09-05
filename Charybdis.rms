@@ -108,12 +108,12 @@ enable_waves 0
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 20 20
-    left_border 15
-    right_border 75
-    top_border 15
-    bottom_border 75
+    left_border 17
+    right_border 77
+    top_border 17
+    bottom_border 77
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -124,12 +124,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 22 18
-    left_border 17
-    right_border 73
-    top_border 13
-    bottom_border 77
+    left_border 19
+    right_border 75
+    top_border 15
+    bottom_border 79
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -140,12 +140,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 25 17
-    left_border 20
-    right_border 70
-    top_border 12
-    bottom_border 78
+    left_border 22
+    right_border 72
+    top_border 14
+    bottom_border 80
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -156,12 +156,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 27 15
-    left_border 22
-    right_border 68
-    top_border 10
-    bottom_border 80
+    left_border 24
+    right_border 70
+    top_border 12
+    bottom_border 82
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -172,12 +172,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 14
-    left_border 25
-    right_border 65
-    top_border 9
-    bottom_border 81
+    left_border 27
+    right_border 67
+    top_border 11
+    bottom_border 83
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -188,12 +188,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 33 13
-    left_border 28
-    right_border 62
-    top_border 8
-    bottom_border 82
+    left_border 30
+    right_border 64
+    top_border 10
+    bottom_border 84
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -204,12 +204,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 35 12
-    left_border 30
-    right_border 60
-    top_border 7
-    bottom_border 83
+    left_border 32
+    right_border 62
+    top_border 9
+    bottom_border 85
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -220,12 +220,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 38 11
-    left_border 33
-    right_border 57
-    top_border 6
-    bottom_border 84
+    left_border 35
+    right_border 59
+    top_border 8
+    bottom_border 86
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -236,12 +236,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 11
-    left_border 36
-    right_border 54
-    top_border 6
-    bottom_border 84
+    left_border 38
+    right_border 56
+    top_border 8
+    bottom_border 86
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -252,12 +252,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 44 10
-    left_border 39
-    right_border 51
-    top_border 5
-    bottom_border 85
+    left_border 41
+    right_border 53
+    top_border 7
+    bottom_border 87
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -268,12 +268,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 47 10
-    left_border 42
-    right_border 48
-    top_border 5
-    bottom_border 85
+    left_border 44
+    right_border 50
+    top_border 7
+    bottom_border 87
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -284,12 +284,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 49 10
-    left_border 44
-    right_border 46
-    top_border 5
-    bottom_border 85
+    left_border 46
+    right_border 48
+    top_border 7
+    bottom_border 87
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -300,12 +300,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 52 11
-    left_border 47
-    right_border 43
-    top_border 6
-    bottom_border 84
+    left_border 49
+    right_border 45
+    top_border 8
+    bottom_border 86
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -316,12 +316,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 55 11
-    left_border 50
-    right_border 40
-    top_border 6
-    bottom_border 84
+    left_border 52
+    right_border 42
+    top_border 8
+    bottom_border 86
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -332,12 +332,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 57 12
-    left_border 52
-    right_border 38
-    top_border 7
-    bottom_border 83
+    left_border 54
+    right_border 40
+    top_border 9
+    bottom_border 85
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -348,12 +348,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 13
-    left_border 55
-    right_border 35
-    top_border 8
-    bottom_border 82
+    left_border 57
+    right_border 37
+    top_border 10
+    bottom_border 84
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -364,12 +364,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 63 14
-    left_border 58
-    right_border 32
-    top_border 9
-    bottom_border 81
+    left_border 60
+    right_border 34
+    top_border 11
+    bottom_border 83
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -380,12 +380,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 65 15
-    left_border 60
-    right_border 30
-    top_border 10
-    bottom_border 80
+    left_border 62
+    right_border 32
+    top_border 12
+    bottom_border 82
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -396,12 +396,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 67 16
-    left_border 62
-    right_border 28
-    top_border 11
-    bottom_border 79
+    left_border 64
+    right_border 30
+    top_border 13
+    bottom_border 81
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -412,12 +412,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 69 18
-    left_border 64
-    right_border 26
-    top_border 13
-    bottom_border 77
+    left_border 66
+    right_border 28
+    top_border 15
+    bottom_border 79
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -428,12 +428,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 20
-    left_border 66
-    right_border 24
-    top_border 15
-    bottom_border 75
+    left_border 68
+    right_border 26
+    top_border 17
+    bottom_border 77
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -444,12 +444,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 73 21
-    left_border 68
-    right_border 22
-    top_border 16
-    bottom_border 74
+    left_border 70
+    right_border 24
+    top_border 18
+    bottom_border 76
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -460,12 +460,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 75 23
-    left_border 70
-    right_border 20
-    top_border 18
-    bottom_border 72
+    left_border 72
+    right_border 22
+    top_border 20
+    bottom_border 74
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -476,12 +476,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 77 25
-    left_border 72
-    right_border 18
-    top_border 20
-    bottom_border 70
+    left_border 74
+    right_border 20
+    top_border 22
+    bottom_border 72
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -492,12 +492,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 78 27
-    left_border 73
-    right_border 17
-    top_border 22
-    bottom_border 68
+    left_border 75
+    right_border 19
+    top_border 24
+    bottom_border 70
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -508,12 +508,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 79 30
-    left_border 74
-    right_border 16
-    top_border 25
-    bottom_border 65
+    left_border 76
+    right_border 18
+    top_border 27
+    bottom_border 67
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -524,12 +524,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 81 32
-    left_border 76
-    right_border 14
-    top_border 27
-    bottom_border 63
+    left_border 78
+    right_border 16
+    top_border 29
+    bottom_border 65
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -540,12 +540,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 82 34
-    left_border 77
-    right_border 13
-    top_border 29
-    bottom_border 61
+    left_border 79
+    right_border 15
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -556,12 +556,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 82 36
-    left_border 77
-    right_border 13
-    top_border 31
-    bottom_border 59
+    left_border 79
+    right_border 15
+    top_border 33
+    bottom_border 61
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -572,12 +572,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 83 39
-    left_border 78
-    right_border 12
-    top_border 34
-    bottom_border 56
+    left_border 80
+    right_border 14
+    top_border 36
+    bottom_border 58
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -588,12 +588,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 83 41
-    left_border 78
-    right_border 12
-    top_border 36
-    bottom_border 54
+    left_border 80
+    right_border 14
+    top_border 38
+    bottom_border 56
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -604,12 +604,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 84 44
-    left_border 79
-    right_border 11
-    top_border 39
-    bottom_border 51
+    left_border 81
+    right_border 13
+    top_border 41
+    bottom_border 53
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -620,12 +620,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 84 46
-    left_border 79
-    right_border 11
-    top_border 41
-    bottom_border 49
+    left_border 81
+    right_border 13
+    top_border 43
+    bottom_border 51
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -636,12 +636,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 84 48
-    left_border 79
-    right_border 11
-    top_border 43
-    bottom_border 47
+    left_border 81
+    right_border 13
+    top_border 45
+    bottom_border 49
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -652,12 +652,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 83 51
-    left_border 78
-    right_border 12
-    top_border 46
-    bottom_border 44
+    left_border 80
+    right_border 14
+    top_border 48
+    bottom_border 46
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -668,12 +668,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 83 53
-    left_border 78
-    right_border 12
-    top_border 48
-    bottom_border 42
+    left_border 80
+    right_border 14
+    top_border 50
+    bottom_border 44
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -684,12 +684,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 82 55
-    left_border 77
-    right_border 13
-    top_border 50
-    bottom_border 40
+    left_border 79
+    right_border 15
+    top_border 52
+    bottom_border 42
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -700,12 +700,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 82 58
-    left_border 77
-    right_border 13
-    top_border 53
-    bottom_border 37
+    left_border 79
+    right_border 15
+    top_border 55
+    bottom_border 39
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -716,12 +716,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 81 60
-    left_border 76
-    right_border 14
-    top_border 55
-    bottom_border 35
+    left_border 78
+    right_border 16
+    top_border 57
+    bottom_border 37
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -732,12 +732,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 80 62
-    left_border 75
-    right_border 15
-    top_border 57
-    bottom_border 33
+    left_border 77
+    right_border 17
+    top_border 59
+    bottom_border 35
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -748,12 +748,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 79 64
-    left_border 74
-    right_border 16
-    top_border 59
-    bottom_border 31
+    left_border 76
+    right_border 18
+    top_border 61
+    bottom_border 33
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -764,12 +764,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 78 66
-    left_border 73
-    right_border 17
-    top_border 61
-    bottom_border 29
+    left_border 75
+    right_border 19
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -780,12 +780,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 76 67
-    left_border 71
-    right_border 19
-    top_border 62
-    bottom_border 28
+    left_border 73
+    right_border 21
+    top_border 64
+    bottom_border 30
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -796,12 +796,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 75 69
-    left_border 70
-    right_border 20
-    top_border 64
-    bottom_border 26
+    left_border 72
+    right_border 22
+    top_border 66
+    bottom_border 28
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -812,12 +812,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 73 70
-    left_border 68
-    right_border 22
-    top_border 65
-    bottom_border 25
+    left_border 70
+    right_border 24
+    top_border 67
+    bottom_border 27
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -828,12 +828,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 72
-    left_border 66
-    right_border 24
-    top_border 67
-    bottom_border 23
+    left_border 68
+    right_border 26
+    top_border 69
+    bottom_border 25
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -844,12 +844,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 73
-    left_border 65
-    right_border 25
-    top_border 68
-    bottom_border 22
+    left_border 67
+    right_border 27
+    top_border 70
+    bottom_border 24
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -860,12 +860,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 68 74
-    left_border 63
-    right_border 27
-    top_border 69
-    bottom_border 21
+    left_border 65
+    right_border 29
+    top_border 71
+    bottom_border 23
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -876,12 +876,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 66 75
-    left_border 61
-    right_border 29
-    top_border 70
-    bottom_border 20
+    left_border 63
+    right_border 31
+    top_border 72
+    bottom_border 22
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -892,12 +892,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 64 76
-    left_border 59
-    right_border 31
-    top_border 71
-    bottom_border 19
+    left_border 61
+    right_border 33
+    top_border 73
+    bottom_border 21
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -908,12 +908,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 62 77
-    left_border 57
-    right_border 33
-    top_border 72
-    bottom_border 18
+    left_border 59
+    right_border 35
+    top_border 74
+    bottom_border 20
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -924,12 +924,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 77
-    left_border 55
-    right_border 35
-    top_border 72
-    bottom_border 18
+    left_border 57
+    right_border 37
+    top_border 74
+    bottom_border 20
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -940,12 +940,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 58 78
-    left_border 53
-    right_border 37
-    top_border 73
-    bottom_border 17
+    left_border 55
+    right_border 39
+    top_border 75
+    bottom_border 19
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -956,12 +956,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 56 78
-    left_border 51
-    right_border 39
-    top_border 73
-    bottom_border 17
+    left_border 53
+    right_border 41
+    top_border 75
+    bottom_border 19
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -972,12 +972,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 54 78
-    left_border 49
-    right_border 41
-    top_border 73
-    bottom_border 17
+    left_border 51
+    right_border 43
+    top_border 75
+    bottom_border 19
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -988,12 +988,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 52 78
-    left_border 47
-    right_border 43
-    top_border 73
-    bottom_border 17
+    left_border 49
+    right_border 45
+    top_border 75
+    bottom_border 19
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1004,12 +1004,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 50 78
-    left_border 45
-    right_border 45
-    top_border 73
-    bottom_border 17
+    left_border 47
+    right_border 47
+    top_border 75
+    bottom_border 19
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1020,12 +1020,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 48 77
-    left_border 43
-    right_border 47
-    top_border 72
-    bottom_border 18
+    left_border 45
+    right_border 49
+    top_border 74
+    bottom_border 20
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1036,12 +1036,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 46 77
-    left_border 41
-    right_border 49
-    top_border 72
-    bottom_border 18
+    left_border 43
+    right_border 51
+    top_border 74
+    bottom_border 20
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1052,12 +1052,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 45 76
-    left_border 40
-    right_border 50
-    top_border 71
-    bottom_border 19
+    left_border 42
+    right_border 52
+    top_border 73
+    bottom_border 21
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1068,12 +1068,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 43 76
-    left_border 38
-    right_border 52
-    top_border 71
-    bottom_border 19
+    left_border 40
+    right_border 54
+    top_border 73
+    bottom_border 21
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1084,12 +1084,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 75
-    left_border 36
-    right_border 54
-    top_border 70
-    bottom_border 20
+    left_border 38
+    right_border 56
+    top_border 72
+    bottom_border 22
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1100,12 +1100,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 74
-    left_border 35
-    right_border 55
-    top_border 69
-    bottom_border 21
+    left_border 37
+    right_border 57
+    top_border 71
+    bottom_border 23
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1116,12 +1116,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 38 73
-    left_border 33
-    right_border 57
-    top_border 68
-    bottom_border 22
+    left_border 35
+    right_border 59
+    top_border 70
+    bottom_border 24
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1132,12 +1132,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 37 72
-    left_border 32
-    right_border 58
-    top_border 67
-    bottom_border 23
+    left_border 34
+    right_border 60
+    top_border 69
+    bottom_border 25
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1148,12 +1148,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 35 71
-    left_border 30
-    right_border 60
-    top_border 66
-    bottom_border 24
+    left_border 32
+    right_border 62
+    top_border 68
+    bottom_border 26
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1164,12 +1164,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 34 69
-    left_border 29
-    right_border 61
-    top_border 64
-    bottom_border 26
+    left_border 31
+    right_border 63
+    top_border 66
+    bottom_border 28
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1180,12 +1180,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 33 68
-    left_border 28
-    right_border 62
-    top_border 63
-    bottom_border 27
+    left_border 30
+    right_border 64
+    top_border 65
+    bottom_border 29
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1196,12 +1196,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 32 66
-    left_border 27
-    right_border 63
-    top_border 61
-    bottom_border 29
+    left_border 29
+    right_border 65
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1212,12 +1212,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 31 65
-    left_border 26
-    right_border 64
-    top_border 60
-    bottom_border 30
+    left_border 28
+    right_border 66
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1228,12 +1228,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 63
-    left_border 25
-    right_border 65
-    top_border 58
-    bottom_border 32
+    left_border 27
+    right_border 67
+    top_border 60
+    bottom_border 34
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1244,12 +1244,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 62
-    left_border 25
-    right_border 65
-    top_border 57
-    bottom_border 33
+    left_border 27
+    right_border 67
+    top_border 59
+    bottom_border 35
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1260,12 +1260,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 60
-    left_border 24
-    right_border 66
-    top_border 55
-    bottom_border 35
+    left_border 26
+    right_border 68
+    top_border 57
+    bottom_border 37
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1276,12 +1276,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 59
-    left_border 24
-    right_border 66
-    top_border 54
-    bottom_border 36
+    left_border 26
+    right_border 68
+    top_border 56
+    bottom_border 38
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1292,12 +1292,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 57
-    left_border 23
-    right_border 67
-    top_border 52
-    bottom_border 38
+    left_border 25
+    right_border 69
+    top_border 54
+    bottom_border 40
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1308,12 +1308,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 56
-    left_border 23
-    right_border 67
-    top_border 51
-    bottom_border 39
+    left_border 25
+    right_border 69
+    top_border 53
+    bottom_border 41
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1324,12 +1324,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 54
-    left_border 23
-    right_border 67
-    top_border 49
-    bottom_border 41
+    left_border 25
+    right_border 69
+    top_border 51
+    bottom_border 43
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1340,12 +1340,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 52
-    left_border 23
-    right_border 67
-    top_border 47
-    bottom_border 43
+    left_border 25
+    right_border 69
+    top_border 49
+    bottom_border 45
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1356,12 +1356,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 51
-    left_border 23
-    right_border 67
-    top_border 46
-    bottom_border 44
+    left_border 25
+    right_border 69
+    top_border 48
+    bottom_border 46
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1372,12 +1372,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 28 49
-    left_border 23
-    right_border 67
-    top_border 44
-    bottom_border 46
+    left_border 25
+    right_border 69
+    top_border 46
+    bottom_border 48
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1388,12 +1388,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 48
-    left_border 24
-    right_border 66
-    top_border 43
-    bottom_border 47
+    left_border 26
+    right_border 68
+    top_border 45
+    bottom_border 49
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1404,12 +1404,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 46
-    left_border 24
-    right_border 66
-    top_border 41
-    bottom_border 49
+    left_border 26
+    right_border 68
+    top_border 43
+    bottom_border 51
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1420,12 +1420,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 45
-    left_border 25
-    right_border 65
-    top_border 40
-    bottom_border 50
+    left_border 27
+    right_border 67
+    top_border 42
+    bottom_border 52
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1436,12 +1436,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 44
-    left_border 25
-    right_border 65
-    top_border 39
-    bottom_border 51
+    left_border 27
+    right_border 67
+    top_border 41
+    bottom_border 53
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1452,12 +1452,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 31 42
-    left_border 26
-    right_border 64
-    top_border 37
-    bottom_border 53
+    left_border 28
+    right_border 66
+    top_border 39
+    bottom_border 55
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1468,12 +1468,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 32 41
-    left_border 27
-    right_border 63
-    top_border 36
-    bottom_border 54
+    left_border 29
+    right_border 65
+    top_border 38
+    bottom_border 56
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1484,12 +1484,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 33 40
-    left_border 28
-    right_border 62
-    top_border 35
-    bottom_border 55
+    left_border 30
+    right_border 64
+    top_border 37
+    bottom_border 57
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1500,12 +1500,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 34 39
-    left_border 29
-    right_border 61
-    top_border 34
-    bottom_border 56
+    left_border 31
+    right_border 63
+    top_border 36
+    bottom_border 58
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1516,12 +1516,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 35 38
-    left_border 30
-    right_border 60
-    top_border 33
-    bottom_border 57
+    left_border 32
+    right_border 62
+    top_border 35
+    bottom_border 59
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1532,12 +1532,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 36 37
-    left_border 31
-    right_border 59
-    top_border 32
-    bottom_border 58
+    left_border 33
+    right_border 61
+    top_border 34
+    bottom_border 60
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1548,12 +1548,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 37 37
-    left_border 32
-    right_border 58
-    top_border 32
-    bottom_border 58
+    left_border 34
+    right_border 60
+    top_border 34
+    bottom_border 60
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1564,12 +1564,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 38 36
-    left_border 33
-    right_border 57
-    top_border 31
-    bottom_border 59
+    left_border 35
+    right_border 59
+    top_border 33
+    bottom_border 61
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1580,12 +1580,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 39 35
-    left_border 34
-    right_border 56
-    top_border 30
-    bottom_border 60
+    left_border 36
+    right_border 58
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1596,12 +1596,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 35
-    left_border 36
-    right_border 54
-    top_border 30
-    bottom_border 60
+    left_border 38
+    right_border 56
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1612,12 +1612,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 42 34
-    left_border 37
-    right_border 53
-    top_border 29
-    bottom_border 61
+    left_border 39
+    right_border 55
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1628,12 +1628,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 43 34
-    left_border 38
-    right_border 52
-    top_border 29
-    bottom_border 61
+    left_border 40
+    right_border 54
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1644,12 +1644,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 44 34
-    left_border 39
-    right_border 51
-    top_border 29
-    bottom_border 61
+    left_border 41
+    right_border 53
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1660,12 +1660,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 45 34
-    left_border 40
-    right_border 50
-    top_border 29
-    bottom_border 61
+    left_border 42
+    right_border 52
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1676,12 +1676,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 47 34
-    left_border 42
-    right_border 48
-    top_border 29
-    bottom_border 61
+    left_border 44
+    right_border 50
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1692,12 +1692,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 48 34
-    left_border 43
-    right_border 47
-    top_border 29
-    bottom_border 61
+    left_border 45
+    right_border 49
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1708,12 +1708,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 49 34
-    left_border 44
-    right_border 46
-    top_border 29
-    bottom_border 61
+    left_border 46
+    right_border 48
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1724,12 +1724,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 50 34
-    left_border 45
-    right_border 45
-    top_border 29
-    bottom_border 61
+    left_border 47
+    right_border 47
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1740,12 +1740,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 51 35
-    left_border 46
-    right_border 44
-    top_border 30
-    bottom_border 60
+    left_border 48
+    right_border 46
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1756,12 +1756,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 52 35
-    left_border 47
-    right_border 43
-    top_border 30
-    bottom_border 60
+    left_border 49
+    right_border 45
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1772,12 +1772,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 53 35
-    left_border 48
-    right_border 42
-    top_border 30
-    bottom_border 60
+    left_border 50
+    right_border 44
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1788,12 +1788,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 54 36
-    left_border 49
-    right_border 41
-    top_border 31
-    bottom_border 59
+    left_border 51
+    right_border 43
+    top_border 33
+    bottom_border 61
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1804,12 +1804,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 55 36
-    left_border 50
-    right_border 40
-    top_border 31
-    bottom_border 59
+    left_border 52
+    right_border 42
+    top_border 33
+    bottom_border 61
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1820,12 +1820,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 56 37
-    left_border 51
-    right_border 39
-    top_border 32
-    bottom_border 58
+    left_border 53
+    right_border 41
+    top_border 34
+    bottom_border 60
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1836,12 +1836,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 57 38
-    left_border 52
-    right_border 38
-    top_border 33
-    bottom_border 57
+    left_border 54
+    right_border 40
+    top_border 35
+    bottom_border 59
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1852,12 +1852,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 58 39
-    left_border 53
-    right_border 37
-    top_border 34
-    bottom_border 56
+    left_border 55
+    right_border 39
+    top_border 36
+    bottom_border 58
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1868,12 +1868,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 58 40
-    left_border 53
-    right_border 37
-    top_border 35
-    bottom_border 55
+    left_border 55
+    right_border 39
+    top_border 37
+    bottom_border 57
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1884,12 +1884,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 41
-    left_border 54
-    right_border 36
-    top_border 36
-    bottom_border 54
+    left_border 56
+    right_border 38
+    top_border 38
+    bottom_border 56
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1900,12 +1900,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 42
-    left_border 54
-    right_border 36
-    top_border 37
-    bottom_border 53
+    left_border 56
+    right_border 38
+    top_border 39
+    bottom_border 55
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1916,12 +1916,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 42
-    left_border 55
-    right_border 35
-    top_border 37
-    bottom_border 53
+    left_border 57
+    right_border 37
+    top_border 39
+    bottom_border 55
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1932,12 +1932,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 43
-    left_border 55
-    right_border 35
-    top_border 38
-    bottom_border 52
+    left_border 57
+    right_border 37
+    top_border 40
+    bottom_border 54
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1948,12 +1948,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 44
-    left_border 55
-    right_border 35
-    top_border 39
-    bottom_border 51
+    left_border 57
+    right_border 37
+    top_border 41
+    bottom_border 53
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1964,12 +1964,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 45
-    left_border 55
-    right_border 35
-    top_border 40
-    bottom_border 50
+    left_border 57
+    right_border 37
+    top_border 42
+    bottom_border 52
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1980,12 +1980,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 46
-    left_border 55
-    right_border 35
-    top_border 41
-    bottom_border 49
+    left_border 57
+    right_border 37
+    top_border 43
+    bottom_border 51
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -1996,12 +1996,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 61 47
-    left_border 56
-    right_border 34
-    top_border 42
-    bottom_border 48
+    left_border 58
+    right_border 36
+    top_border 44
+    bottom_border 50
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2012,12 +2012,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 47
-    left_border 55
-    right_border 35
-    top_border 42
-    bottom_border 48
+    left_border 57
+    right_border 37
+    top_border 44
+    bottom_border 50
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2028,12 +2028,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 48
-    left_border 55
-    right_border 35
-    top_border 43
-    bottom_border 47
+    left_border 57
+    right_border 37
+    top_border 45
+    bottom_border 49
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2044,12 +2044,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 49
-    left_border 55
-    right_border 35
-    top_border 44
-    bottom_border 46
+    left_border 57
+    right_border 37
+    top_border 46
+    bottom_border 48
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2060,12 +2060,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 50
-    left_border 55
-    right_border 35
-    top_border 45
-    bottom_border 45
+    left_border 57
+    right_border 37
+    top_border 47
+    bottom_border 47
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2076,12 +2076,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 51
-    left_border 54
-    right_border 36
-    top_border 46
-    bottom_border 44
+    left_border 56
+    right_border 38
+    top_border 48
+    bottom_border 46
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2092,12 +2092,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 52
-    left_border 54
-    right_border 36
-    top_border 47
-    bottom_border 43
+    left_border 56
+    right_border 38
+    top_border 49
+    bottom_border 45
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2108,12 +2108,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 58 53
-    left_border 53
-    right_border 37
-    top_border 48
-    bottom_border 42
+    left_border 55
+    right_border 39
+    top_border 50
+    bottom_border 44
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2125,12 +2125,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 80 80
-    left_border 75
-    right_border 15
-    top_border 75
-    bottom_border 15
+    left_border 77
+    right_border 17
+    top_border 77
+    bottom_border 17
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2141,12 +2141,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 78 82
-    left_border 73
-    right_border 17
-    top_border 77
-    bottom_border 13
+    left_border 75
+    right_border 19
+    top_border 79
+    bottom_border 15
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2157,12 +2157,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 75 83
-    left_border 70
-    right_border 20
-    top_border 78
-    bottom_border 12
+    left_border 72
+    right_border 22
+    top_border 80
+    bottom_border 14
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2173,12 +2173,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 73 85
-    left_border 68
-    right_border 22
-    top_border 80
-    bottom_border 10
+    left_border 70
+    right_border 24
+    top_border 82
+    bottom_border 12
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2189,12 +2189,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 86
-    left_border 65
-    right_border 25
-    top_border 81
-    bottom_border 9
+    left_border 67
+    right_border 27
+    top_border 83
+    bottom_border 11
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2205,12 +2205,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 67 87
-    left_border 62
-    right_border 28
-    top_border 82
-    bottom_border 8
+    left_border 64
+    right_border 30
+    top_border 84
+    bottom_border 10
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2221,12 +2221,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 65 88
-    left_border 60
-    right_border 30
-    top_border 83
-    bottom_border 7
+    left_border 62
+    right_border 32
+    top_border 85
+    bottom_border 9
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2237,12 +2237,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 62 89
-    left_border 57
-    right_border 33
-    top_border 84
-    bottom_border 6
+    left_border 59
+    right_border 35
+    top_border 86
+    bottom_border 8
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2253,12 +2253,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 89
-    left_border 54
-    right_border 36
-    top_border 84
-    bottom_border 6
+    left_border 56
+    right_border 38
+    top_border 86
+    bottom_border 8
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2269,12 +2269,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 56 90
-    left_border 51
-    right_border 39
-    top_border 85
-    bottom_border 5
+    left_border 53
+    right_border 41
+    top_border 87
+    bottom_border 7
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2285,12 +2285,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 53 90
-    left_border 48
-    right_border 42
-    top_border 85
-    bottom_border 5
+    left_border 50
+    right_border 44
+    top_border 87
+    bottom_border 7
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2301,12 +2301,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 51 90
-    left_border 46
-    right_border 44
-    top_border 85
-    bottom_border 5
+    left_border 48
+    right_border 46
+    top_border 87
+    bottom_border 7
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2317,12 +2317,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 48 89
-    left_border 43
-    right_border 47
-    top_border 84
-    bottom_border 6
+    left_border 45
+    right_border 49
+    top_border 86
+    bottom_border 8
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2333,12 +2333,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 45 89
-    left_border 40
-    right_border 50
-    top_border 84
-    bottom_border 6
+    left_border 42
+    right_border 52
+    top_border 86
+    bottom_border 8
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2349,12 +2349,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 43 88
-    left_border 38
-    right_border 52
-    top_border 83
-    bottom_border 7
+    left_border 40
+    right_border 54
+    top_border 85
+    bottom_border 9
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2365,12 +2365,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 87
-    left_border 35
-    right_border 55
-    top_border 82
-    bottom_border 8
+    left_border 37
+    right_border 57
+    top_border 84
+    bottom_border 10
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2381,12 +2381,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 37 86
-    left_border 32
-    right_border 58
-    top_border 81
-    bottom_border 9
+    left_border 34
+    right_border 60
+    top_border 83
+    bottom_border 11
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2397,12 +2397,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 35 85
-    left_border 30
-    right_border 60
-    top_border 80
-    bottom_border 10
+    left_border 32
+    right_border 62
+    top_border 82
+    bottom_border 12
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2413,12 +2413,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 33 84
-    left_border 28
-    right_border 62
-    top_border 79
-    bottom_border 11
+    left_border 30
+    right_border 64
+    top_border 81
+    bottom_border 13
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2429,12 +2429,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 31 82
-    left_border 26
-    right_border 64
-    top_border 77
-    bottom_border 13
+    left_border 28
+    right_border 66
+    top_border 79
+    bottom_border 15
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2445,12 +2445,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 80
-    left_border 24
-    right_border 66
-    top_border 75
-    bottom_border 15
+    left_border 26
+    right_border 68
+    top_border 77
+    bottom_border 17
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2461,12 +2461,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 27 79
-    left_border 22
-    right_border 68
-    top_border 74
-    bottom_border 16
+    left_border 24
+    right_border 70
+    top_border 76
+    bottom_border 18
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2477,12 +2477,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 25 77
-    left_border 20
-    right_border 70
-    top_border 72
-    bottom_border 18
+    left_border 22
+    right_border 72
+    top_border 74
+    bottom_border 20
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2493,12 +2493,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 23 75
-    left_border 18
-    right_border 72
-    top_border 70
-    bottom_border 20
+    left_border 20
+    right_border 74
+    top_border 72
+    bottom_border 22
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2509,12 +2509,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 22 73
-    left_border 17
-    right_border 73
-    top_border 68
-    bottom_border 22
+    left_border 19
+    right_border 75
+    top_border 70
+    bottom_border 24
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2525,12 +2525,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 21 70
-    left_border 16
-    right_border 74
-    top_border 65
-    bottom_border 25
+    left_border 18
+    right_border 76
+    top_border 67
+    bottom_border 27
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2541,12 +2541,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 19 68
-    left_border 14
-    right_border 76
-    top_border 63
-    bottom_border 27
+    left_border 16
+    right_border 78
+    top_border 65
+    bottom_border 29
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2557,12 +2557,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 18 66
-    left_border 13
-    right_border 77
-    top_border 61
-    bottom_border 29
+    left_border 15
+    right_border 79
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2573,12 +2573,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 18 64
-    left_border 13
-    right_border 77
-    top_border 59
-    bottom_border 31
+    left_border 15
+    right_border 79
+    top_border 61
+    bottom_border 33
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2589,12 +2589,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 17 61
-    left_border 12
-    right_border 78
-    top_border 56
-    bottom_border 34
+    left_border 14
+    right_border 80
+    top_border 58
+    bottom_border 36
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2605,12 +2605,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 17 59
-    left_border 12
-    right_border 78
-    top_border 54
-    bottom_border 36
+    left_border 14
+    right_border 80
+    top_border 56
+    bottom_border 38
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2621,12 +2621,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 16 56
-    left_border 11
-    right_border 79
-    top_border 51
-    bottom_border 39
+    left_border 13
+    right_border 81
+    top_border 53
+    bottom_border 41
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2637,12 +2637,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 16 54
-    left_border 11
-    right_border 79
-    top_border 49
-    bottom_border 41
+    left_border 13
+    right_border 81
+    top_border 51
+    bottom_border 43
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2653,12 +2653,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 16 52
-    left_border 11
-    right_border 79
-    top_border 47
-    bottom_border 43
+    left_border 13
+    right_border 81
+    top_border 49
+    bottom_border 45
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2669,12 +2669,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 17 49
-    left_border 12
-    right_border 78
-    top_border 44
-    bottom_border 46
+    left_border 14
+    right_border 80
+    top_border 46
+    bottom_border 48
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2685,12 +2685,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 17 47
-    left_border 12
-    right_border 78
-    top_border 42
-    bottom_border 48
+    left_border 14
+    right_border 80
+    top_border 44
+    bottom_border 50
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2701,12 +2701,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 18 45
-    left_border 13
-    right_border 77
-    top_border 40
-    bottom_border 50
+    left_border 15
+    right_border 79
+    top_border 42
+    bottom_border 52
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2717,12 +2717,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 18 42
-    left_border 13
-    right_border 77
-    top_border 37
-    bottom_border 53
+    left_border 15
+    right_border 79
+    top_border 39
+    bottom_border 55
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2733,12 +2733,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 19 40
-    left_border 14
-    right_border 76
-    top_border 35
-    bottom_border 55
+    left_border 16
+    right_border 78
+    top_border 37
+    bottom_border 57
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2749,12 +2749,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 20 38
-    left_border 15
-    right_border 75
-    top_border 33
-    bottom_border 57
+    left_border 17
+    right_border 77
+    top_border 35
+    bottom_border 59
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2765,12 +2765,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 21 36
-    left_border 16
-    right_border 74
-    top_border 31
-    bottom_border 59
+    left_border 18
+    right_border 76
+    top_border 33
+    bottom_border 61
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2781,12 +2781,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 22 34
-    left_border 17
-    right_border 73
-    top_border 29
-    bottom_border 61
+    left_border 19
+    right_border 75
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2797,12 +2797,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 24 33
-    left_border 19
-    right_border 71
-    top_border 28
-    bottom_border 62
+    left_border 21
+    right_border 73
+    top_border 30
+    bottom_border 64
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2813,12 +2813,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 25 31
-    left_border 20
-    right_border 70
-    top_border 26
-    bottom_border 64
+    left_border 22
+    right_border 72
+    top_border 28
+    bottom_border 66
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2829,12 +2829,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 27 30
-    left_border 22
-    right_border 68
-    top_border 25
-    bottom_border 65
+    left_border 24
+    right_border 70
+    top_border 27
+    bottom_border 67
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2845,12 +2845,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 29 28
-    left_border 24
-    right_border 66
-    top_border 23
-    bottom_border 67
+    left_border 26
+    right_border 68
+    top_border 25
+    bottom_border 69
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2861,12 +2861,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 30 27
-    left_border 25
-    right_border 65
-    top_border 22
-    bottom_border 68
+    left_border 27
+    right_border 67
+    top_border 24
+    bottom_border 70
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2877,12 +2877,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 32 26
-    left_border 27
-    right_border 63
-    top_border 21
-    bottom_border 69
+    left_border 29
+    right_border 65
+    top_border 23
+    bottom_border 71
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2893,12 +2893,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 34 25
-    left_border 29
-    right_border 61
-    top_border 20
-    bottom_border 70
+    left_border 31
+    right_border 63
+    top_border 22
+    bottom_border 72
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2909,12 +2909,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 36 24
-    left_border 31
-    right_border 59
-    top_border 19
-    bottom_border 71
+    left_border 33
+    right_border 61
+    top_border 21
+    bottom_border 73
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2925,12 +2925,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 38 23
-    left_border 33
-    right_border 57
-    top_border 18
-    bottom_border 72
+    left_border 35
+    right_border 59
+    top_border 20
+    bottom_border 74
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2941,12 +2941,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 23
-    left_border 35
-    right_border 55
-    top_border 18
-    bottom_border 72
+    left_border 37
+    right_border 57
+    top_border 20
+    bottom_border 74
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2957,12 +2957,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 42 22
-    left_border 37
-    right_border 53
-    top_border 17
-    bottom_border 73
+    left_border 39
+    right_border 55
+    top_border 19
+    bottom_border 75
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2973,12 +2973,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 44 22
-    left_border 39
-    right_border 51
-    top_border 17
-    bottom_border 73
+    left_border 41
+    right_border 53
+    top_border 19
+    bottom_border 75
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -2989,12 +2989,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 46 22
-    left_border 41
-    right_border 49
-    top_border 17
-    bottom_border 73
+    left_border 43
+    right_border 51
+    top_border 19
+    bottom_border 75
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3005,12 +3005,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 48 22
-    left_border 43
-    right_border 47
-    top_border 17
-    bottom_border 73
+    left_border 45
+    right_border 49
+    top_border 19
+    bottom_border 75
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3021,12 +3021,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 50 22
-    left_border 45
-    right_border 45
-    top_border 17
-    bottom_border 73
+    left_border 47
+    right_border 47
+    top_border 19
+    bottom_border 75
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3037,12 +3037,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 52 23
-    left_border 47
-    right_border 43
-    top_border 18
-    bottom_border 72
+    left_border 49
+    right_border 45
+    top_border 20
+    bottom_border 74
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3053,12 +3053,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 54 23
-    left_border 49
-    right_border 41
-    top_border 18
-    bottom_border 72
+    left_border 51
+    right_border 43
+    top_border 20
+    bottom_border 74
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3069,12 +3069,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 55 24
-    left_border 50
-    right_border 40
-    top_border 19
-    bottom_border 71
+    left_border 52
+    right_border 42
+    top_border 21
+    bottom_border 73
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3085,12 +3085,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 57 24
-    left_border 52
-    right_border 38
-    top_border 19
-    bottom_border 71
+    left_border 54
+    right_border 40
+    top_border 21
+    bottom_border 73
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3101,12 +3101,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 25
-    left_border 54
-    right_border 36
-    top_border 20
-    bottom_border 70
+    left_border 56
+    right_border 38
+    top_border 22
+    bottom_border 72
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3117,12 +3117,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 60 26
-    left_border 55
-    right_border 35
-    top_border 21
-    bottom_border 69
+    left_border 57
+    right_border 37
+    top_border 23
+    bottom_border 71
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3133,12 +3133,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 62 27
-    left_border 57
-    right_border 33
-    top_border 22
-    bottom_border 68
+    left_border 59
+    right_border 35
+    top_border 24
+    bottom_border 70
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3149,12 +3149,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 63 28
-    left_border 58
-    right_border 32
-    top_border 23
-    bottom_border 67
+    left_border 60
+    right_border 34
+    top_border 25
+    bottom_border 69
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3165,12 +3165,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 65 29
-    left_border 60
-    right_border 30
-    top_border 24
-    bottom_border 66
+    left_border 62
+    right_border 32
+    top_border 26
+    bottom_border 68
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3181,12 +3181,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 66 31
-    left_border 61
-    right_border 29
-    top_border 26
-    bottom_border 64
+    left_border 63
+    right_border 31
+    top_border 28
+    bottom_border 66
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3197,12 +3197,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 67 32
-    left_border 62
-    right_border 28
-    top_border 27
-    bottom_border 63
+    left_border 64
+    right_border 30
+    top_border 29
+    bottom_border 65
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3213,12 +3213,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 68 34
-    left_border 63
-    right_border 27
-    top_border 29
-    bottom_border 61
+    left_border 65
+    right_border 29
+    top_border 31
+    bottom_border 63
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3229,12 +3229,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 69 35
-    left_border 64
-    right_border 26
-    top_border 30
-    bottom_border 60
+    left_border 66
+    right_border 28
+    top_border 32
+    bottom_border 62
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3245,12 +3245,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 37
-    left_border 65
-    right_border 25
-    top_border 32
-    bottom_border 58
+    left_border 67
+    right_border 27
+    top_border 34
+    bottom_border 60
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3261,12 +3261,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 38
-    left_border 65
-    right_border 25
-    top_border 33
-    bottom_border 57
+    left_border 67
+    right_border 27
+    top_border 35
+    bottom_border 59
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3277,12 +3277,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 40
-    left_border 66
-    right_border 24
-    top_border 35
-    bottom_border 55
+    left_border 68
+    right_border 26
+    top_border 37
+    bottom_border 57
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3293,12 +3293,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 41
-    left_border 66
-    right_border 24
-    top_border 36
-    bottom_border 54
+    left_border 68
+    right_border 26
+    top_border 38
+    bottom_border 56
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3309,12 +3309,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 43
-    left_border 67
-    right_border 23
-    top_border 38
-    bottom_border 52
+    left_border 69
+    right_border 25
+    top_border 40
+    bottom_border 54
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3325,12 +3325,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 44
-    left_border 67
-    right_border 23
-    top_border 39
-    bottom_border 51
+    left_border 69
+    right_border 25
+    top_border 41
+    bottom_border 53
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3341,12 +3341,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 46
-    left_border 67
-    right_border 23
-    top_border 41
-    bottom_border 49
+    left_border 69
+    right_border 25
+    top_border 43
+    bottom_border 51
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3357,12 +3357,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 48
-    left_border 67
-    right_border 23
-    top_border 43
-    bottom_border 47
+    left_border 69
+    right_border 25
+    top_border 45
+    bottom_border 49
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3373,12 +3373,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 49
-    left_border 67
-    right_border 23
-    top_border 44
-    bottom_border 46
+    left_border 69
+    right_border 25
+    top_border 46
+    bottom_border 48
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3389,12 +3389,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 72 51
-    left_border 67
-    right_border 23
-    top_border 46
-    bottom_border 44
+    left_border 69
+    right_border 25
+    top_border 48
+    bottom_border 46
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3405,12 +3405,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 52
-    left_border 66
-    right_border 24
-    top_border 47
-    bottom_border 43
+    left_border 68
+    right_border 26
+    top_border 49
+    bottom_border 45
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3421,12 +3421,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 71 54
-    left_border 66
-    right_border 24
-    top_border 49
-    bottom_border 41
+    left_border 68
+    right_border 26
+    top_border 51
+    bottom_border 43
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3437,12 +3437,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 55
-    left_border 65
-    right_border 25
-    top_border 50
-    bottom_border 40
+    left_border 67
+    right_border 27
+    top_border 52
+    bottom_border 42
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3453,12 +3453,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 70 56
-    left_border 65
-    right_border 25
-    top_border 51
-    bottom_border 39
+    left_border 67
+    right_border 27
+    top_border 53
+    bottom_border 41
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3469,12 +3469,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 69 58
-    left_border 64
-    right_border 26
-    top_border 53
-    bottom_border 37
+    left_border 66
+    right_border 28
+    top_border 55
+    bottom_border 39
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3485,12 +3485,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 68 59
-    left_border 63
-    right_border 27
-    top_border 54
-    bottom_border 36
+    left_border 65
+    right_border 29
+    top_border 56
+    bottom_border 38
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3501,12 +3501,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 67 60
-    left_border 62
-    right_border 28
-    top_border 55
-    bottom_border 35
+    left_border 64
+    right_border 30
+    top_border 57
+    bottom_border 37
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3517,12 +3517,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 66 61
-    left_border 61
-    right_border 29
-    top_border 56
-    bottom_border 34
+    left_border 63
+    right_border 31
+    top_border 58
+    bottom_border 36
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3533,12 +3533,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 65 62
-    left_border 60
-    right_border 30
-    top_border 57
-    bottom_border 33
+    left_border 62
+    right_border 32
+    top_border 59
+    bottom_border 35
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3549,12 +3549,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 64 63
-    left_border 59
-    right_border 31
-    top_border 58
-    bottom_border 32
+    left_border 61
+    right_border 33
+    top_border 60
+    bottom_border 34
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3565,12 +3565,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 63 63
-    left_border 58
-    right_border 32
-    top_border 58
-    bottom_border 32
+    left_border 60
+    right_border 34
+    top_border 60
+    bottom_border 34
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3581,12 +3581,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 62 64
-    left_border 57
-    right_border 33
-    top_border 59
-    bottom_border 31
+    left_border 59
+    right_border 35
+    top_border 61
+    bottom_border 33
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3597,12 +3597,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 61 65
-    left_border 56
-    right_border 34
-    top_border 60
-    bottom_border 30
+    left_border 58
+    right_border 36
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3613,12 +3613,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 59 65
-    left_border 54
-    right_border 36
-    top_border 60
-    bottom_border 30
+    left_border 56
+    right_border 38
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3629,12 +3629,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 58 66
-    left_border 53
-    right_border 37
-    top_border 61
-    bottom_border 29
+    left_border 55
+    right_border 39
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3645,12 +3645,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 57 66
-    left_border 52
-    right_border 38
-    top_border 61
-    bottom_border 29
+    left_border 54
+    right_border 40
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3661,12 +3661,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 56 66
-    left_border 51
-    right_border 39
-    top_border 61
-    bottom_border 29
+    left_border 53
+    right_border 41
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3677,12 +3677,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 55 66
-    left_border 50
-    right_border 40
-    top_border 61
-    bottom_border 29
+    left_border 52
+    right_border 42
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3693,12 +3693,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 53 66
-    left_border 48
-    right_border 42
-    top_border 61
-    bottom_border 29
+    left_border 50
+    right_border 44
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3709,12 +3709,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 52 66
-    left_border 47
-    right_border 43
-    top_border 61
-    bottom_border 29
+    left_border 49
+    right_border 45
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3725,12 +3725,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 51 66
-    left_border 46
-    right_border 44
-    top_border 61
-    bottom_border 29
+    left_border 48
+    right_border 46
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3741,12 +3741,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 50 66
-    left_border 45
-    right_border 45
-    top_border 61
-    bottom_border 29
+    left_border 47
+    right_border 47
+    top_border 63
+    bottom_border 31
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3757,12 +3757,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 49 65
-    left_border 44
-    right_border 46
-    top_border 60
-    bottom_border 30
+    left_border 46
+    right_border 48
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3773,12 +3773,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 48 65
-    left_border 43
-    right_border 47
-    top_border 60
-    bottom_border 30
+    left_border 45
+    right_border 49
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3789,12 +3789,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 47 65
-    left_border 42
-    right_border 48
-    top_border 60
-    bottom_border 30
+    left_border 44
+    right_border 50
+    top_border 62
+    bottom_border 32
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3805,12 +3805,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 46 64
-    left_border 41
-    right_border 49
-    top_border 59
-    bottom_border 31
+    left_border 43
+    right_border 51
+    top_border 61
+    bottom_border 33
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3821,12 +3821,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 45 64
-    left_border 40
-    right_border 50
-    top_border 59
-    bottom_border 31
+    left_border 42
+    right_border 52
+    top_border 61
+    bottom_border 33
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3837,12 +3837,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 44 63
-    left_border 39
-    right_border 51
-    top_border 58
-    bottom_border 32
+    left_border 41
+    right_border 53
+    top_border 60
+    bottom_border 34
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3853,12 +3853,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 43 62
-    left_border 38
-    right_border 52
-    top_border 57
-    bottom_border 33
+    left_border 40
+    right_border 54
+    top_border 59
+    bottom_border 35
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3869,12 +3869,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 42 61
-    left_border 37
-    right_border 53
-    top_border 56
-    bottom_border 34
+    left_border 39
+    right_border 55
+    top_border 58
+    bottom_border 36
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3885,12 +3885,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 42 60
-    left_border 37
-    right_border 53
-    top_border 55
-    bottom_border 35
+    left_border 39
+    right_border 55
+    top_border 57
+    bottom_border 37
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3901,12 +3901,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 59
-    left_border 36
-    right_border 54
-    top_border 54
-    bottom_border 36
+    left_border 38
+    right_border 56
+    top_border 56
+    bottom_border 38
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3917,12 +3917,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 58
-    left_border 36
-    right_border 54
-    top_border 53
-    bottom_border 37
+    left_border 38
+    right_border 56
+    top_border 55
+    bottom_border 39
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3933,12 +3933,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 58
-    left_border 35
-    right_border 55
-    top_border 53
-    bottom_border 37
+    left_border 37
+    right_border 57
+    top_border 55
+    bottom_border 39
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3949,12 +3949,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 57
-    left_border 35
-    right_border 55
-    top_border 52
-    bottom_border 38
+    left_border 37
+    right_border 57
+    top_border 54
+    bottom_border 40
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3965,12 +3965,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 56
-    left_border 35
-    right_border 55
-    top_border 51
-    bottom_border 39
+    left_border 37
+    right_border 57
+    top_border 53
+    bottom_border 41
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3981,12 +3981,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 55
-    left_border 35
-    right_border 55
-    top_border 50
-    bottom_border 40
+    left_border 37
+    right_border 57
+    top_border 52
+    bottom_border 42
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -3997,12 +3997,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 54
-    left_border 35
-    right_border 55
-    top_border 49
-    bottom_border 41
+    left_border 37
+    right_border 57
+    top_border 51
+    bottom_border 43
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4013,12 +4013,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 39 53
-    left_border 34
-    right_border 56
-    top_border 48
-    bottom_border 42
+    left_border 36
+    right_border 58
+    top_border 50
+    bottom_border 44
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4029,12 +4029,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 53
-    left_border 35
-    right_border 55
-    top_border 48
-    bottom_border 42
+    left_border 37
+    right_border 57
+    top_border 50
+    bottom_border 44
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4045,12 +4045,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 52
-    left_border 35
-    right_border 55
-    top_border 47
-    bottom_border 43
+    left_border 37
+    right_border 57
+    top_border 49
+    bottom_border 45
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4061,12 +4061,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 51
-    left_border 35
-    right_border 55
-    top_border 46
-    bottom_border 44
+    left_border 37
+    right_border 57
+    top_border 48
+    bottom_border 46
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4077,12 +4077,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 40 50
-    left_border 35
-    right_border 55
-    top_border 45
-    bottom_border 45
+    left_border 37
+    right_border 57
+    top_border 47
+    bottom_border 47
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4093,12 +4093,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 49
-    left_border 36
-    right_border 54
-    top_border 44
-    bottom_border 46
+    left_border 38
+    right_border 56
+    top_border 46
+    bottom_border 48
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4109,12 +4109,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 41 48
-    left_border 36
-    right_border 54
-    top_border 43
-    bottom_border 47
+    left_border 38
+    right_border 56
+    top_border 45
+    bottom_border 49
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -4125,12 +4125,12 @@ create_land {
 create_land {
     terrain_type ARM_GROUND
     number_of_tiles 0
-    base_size 7
+    base_size 3
     land_position 42 47
-    left_border 37
-    right_border 53
-    top_border 42
-    bottom_border 48
+    left_border 39
+    right_border 55
+    top_border 44
+    bottom_border 50
     border_fuzziness 100
     clumping_factor 100
     other_zone_avoidance_distance 0
@@ -5455,6 +5455,7 @@ create_object START_TRANSPORT {
     max_distance_to_players 28
     find_closest
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
 }
 
@@ -5715,6 +5716,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2000
@@ -5731,6 +5733,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2010
@@ -5747,6 +5750,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2020
@@ -5763,6 +5767,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2030
@@ -5779,6 +5784,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2040
@@ -5795,6 +5801,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2050
@@ -5811,6 +5818,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2060
@@ -5827,6 +5835,7 @@ create_object SHORE_FISH {
     min_distance_to_players 15
     max_distance_to_players 30
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2070
@@ -5843,6 +5852,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2080
@@ -5859,6 +5869,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2090
@@ -5875,6 +5886,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2100
@@ -5891,6 +5903,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2110
@@ -5907,6 +5920,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2120
@@ -5923,6 +5937,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2130
@@ -5939,6 +5954,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2140
@@ -5955,6 +5971,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2150
@@ -5971,6 +5988,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2160
@@ -5987,6 +6005,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 20
     max_distance_to_players 36
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2170
@@ -6003,6 +6022,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2180
@@ -6019,6 +6039,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2190
@@ -6035,6 +6056,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2200
@@ -6051,6 +6073,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2210
@@ -6067,6 +6090,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2220
@@ -6083,6 +6107,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2230
@@ -6099,6 +6124,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2240
@@ -6115,6 +6141,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2250
@@ -6131,6 +6158,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2260
@@ -6147,6 +6175,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2270
@@ -6163,6 +6192,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2280
@@ -6179,6 +6209,7 @@ create_object HARBOR_FISH {
     min_distance_to_players 32
     max_distance_to_players 55
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area 2290

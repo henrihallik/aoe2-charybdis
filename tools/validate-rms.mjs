@@ -338,9 +338,16 @@ check("fish schools are singleton and spaced", () => {
     assert.ok(numericDirective(fish.body, "actor_area_radius", 0) >= 4);
     assert.equal(directive(fish.body, "terrain_to_place_on"), "SEA_WATER");
     assert.ok(hasDirective(fish.body, "set_place_for_every_player"));
+    assert.ok(hasDirective(fish.body, "ignore_terrain_restrictions"));
     actorAreas.push(directive(fish.body, "actor_area"));
   }
   assert.equal(new Set(actorAreas).size, actorAreas.length);
+
+  const transport = objects.find((block) => block.name === "START_TRANSPORT");
+  assert.ok(transport, "missing starting transport");
+  assert.equal(directive(transport.body, "terrain_to_place_on"), "SEA_WATER");
+  assert.ok(hasDirective(transport.body, "set_place_for_every_player"));
+  assert.ok(hasDirective(transport.body, "ignore_terrain_restrictions"));
 });
 
 check("player placement never targets a fixed land ID", () => {

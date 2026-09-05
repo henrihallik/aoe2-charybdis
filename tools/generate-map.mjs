@@ -305,6 +305,7 @@ create_object START_TRANSPORT {
     max_distance_to_players 28
     find_closest
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
 }`;
 }
@@ -426,6 +427,7 @@ function fishObjects() {
     min_distance_to_players ${min}
     max_distance_to_players ${max}
     force_placement
+    ignore_terrain_restrictions
     terrain_to_place_on SEA_WATER
     avoid_all_actor_areas
     actor_area ${actorArea}
@@ -554,7 +556,7 @@ function makeSvg() {
     project({ x: 0, y: 100 }),
   ].map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ");
 
-  const arms = [0, 1].flatMap((arm) => armSamples(arm).map((point) => circle(point, 3.0, "#a49a7e"))).join("\n    ");
+  const arms = [0, 1].flatMap((arm) => armSamples(arm).map((point) => circle(point, ARM_STAMP_SIZE, "#a49a7e"))).join("\n    ");
   const homes = HOME_CENTERS.map((home, index) => `${circle(home, 13.6, "#7c9b55", "#d9e6aa", 3)}
     ${circle(home, 2.2, index === 0 ? "#3478c4" : "#d34b3f", "#ffffff", 2)}`).join("\n    ");
   const nodeColors = { SALVAGE: "#d3a53c", PROVISION: "#78a867", SHRINE: "#a58ac6" };
